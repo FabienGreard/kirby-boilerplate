@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "types": ["cypress", "@testing-library/cypress"]
+  },
+  "include": ["**/*.spec.ts"]
+}
