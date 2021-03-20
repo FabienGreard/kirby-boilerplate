@@ -1,0 +1,18 @@
+{
+  "ci": {
+    "collect": {
+      "startServerCommand": "yarn build && yarn start",
+      "url": ["http://localhost:3000/"],
+      "startServerReadyPattern": "started",
+      "settings": {
+        "skipAudits": ["redirects-http"]
+      }
+    },
+    "assert": {
+      "preset": "lighthouse:no-pwa"
+    },
+    "upload": {
+      "target": "temporary-public-storage"
+    }
+  }
+}
