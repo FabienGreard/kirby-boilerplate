@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "es6",
+    "types": ["jest"],
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "paths": {
+      "components/*": ["components/*"],
+      "utils/*": ["utils/*"],
+      "langs/*": ["langs/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "setupTests.js"],
+  "exclude": ["node_modules", "cypress/**/*.spec.ts"]
+}
