@@ -103,6 +103,7 @@ jobs:
           owner=`echo ${GITHUB_REPOSITORY} | sed 's/\/.*//g' | tr [:upper:] [:lower:]`
           URL="https://${repository}-git-${branch}-${owner}.vercel.app"
           echo "CYPRESS_baseUrl=${URL}" >> $GITHUB_ENV
+          echo ${{ github.event.deployment.id }}
 
       - name: Cypress run
         uses: cypress-io/github-action@v2
