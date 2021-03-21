@@ -13,6 +13,7 @@ export default function Header({ title = SEO.title, description = SEO.descriptio
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="icon" href="/favicon.ico" />
+      <link rel="manifest" href="/manifest.json" />
     </Head>
   );
 }

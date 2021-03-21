@@ -4,6 +4,7 @@ module.exports = {
     '^lang/(.*)$': '<rootDir>/lang/$1',
     '^pages/(.*)$': '<rootDir>/pages/$1',
     '^utils/(.*)$': '<rootDir>/utils/$1',
+    '^hooks/(.*)$': '<rootDir>/hooks/$1',
     '^package.json$': '<rootDir>/package.json',
   },
   testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(test).[tj]s?(x)'],
@@ -14,7 +15,12 @@ module.exports = {
       },
     },
   },
-  collectCoverageFrom: ['components/**/*.(ts|tsx)', 'utils/**/*.(ts|tsx)', '!utils/customTestRender.(ts|tsx)'],
+  collectCoverageFrom: [
+    'hooks/**/*.(ts|tsx)',
+    'components/**/*.(ts|tsx)',
+    'utils/**/*.(ts|tsx)',
+    '!utils/customTestRender.(ts|tsx)',
+  ],
   coverageThreshold: {
     global: {
       branches: 80,
