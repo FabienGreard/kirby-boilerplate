@@ -55,11 +55,18 @@ This project is build with :
 - [Eslint](https://eslint.org/)
 - [husky](https://typicode.github.io/husky/#/)
 - [commitlint](https://commitlint.js.org/#/)
+- [standard-version](https://github.com/conventional-changelog/standard-version)
 - [vscode](https://code.visualstudio.com/)
+
+## Tests
+
+This project use [testing-library](https://testing-library.com/) for both unit test and e2e.
+
+- [react-hooks](https://react-hooks-testing-library.com/)
 
 ## Git Commit Convention
 
-Using [gitmoji](https://gitmoji.dev/) with the below types:
+Using [commitlint](https://commitlint.js.org/#/) with the below types:
 
 build
 ci
@@ -74,10 +81,10 @@ test
 chore
 wip
 
-Given the [conventionalcommits](https://www.conventionalcommits.org/en/v1.0.0/) with [gitmoji](https://gitmoji.dev/) it goes like this :
+Given the [conventionalcommits](https://www.conventionalcommits.org/en/v1.0.0/):
 
 ```
-:gitmoji:<type>[optional scope]: <description>
+<type>[optional scope]: <description>
 
 [optional body]
 
