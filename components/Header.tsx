@@ -14,6 +14,8 @@ export default function Header({ title = SEO.title, description = SEO.descriptio
       <meta name="description" content={description} />
       <link rel="icon" href="/favicon.ico" />
       <link rel="manifest" href="/manifest.json" />
+      <meta name="theme-color" content="#fff" />
+      <link rel="apple-touch-icon" href="/images/192.png" />
     </Head>
   );
 }
