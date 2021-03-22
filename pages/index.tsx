@@ -32,7 +32,7 @@ const Footer = () => {
         <Link key={lang} locale={lang} href="/" passHref>
           <button
             type="button"
-            className="bg-gray-100 box-border w-6 h-6 mx-0.5 hover:bg-gray-300 focus:bg-gray-300 focus:outline-none select-none"
+            className="bg-gray-100 box-border w-12 h-12 mx-0.5 hover:bg-gray-300 focus:bg-gray-300 focus:outline-none select-none"
           >
             {lang}
           </button>
