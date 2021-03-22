@@ -3,11 +3,19 @@
 
 # front-end-rocks-boilerplate
 
-This is an opiniated boilerplate with rocking tools for front-end development
+This is an opinionated boilerplate with rocking tools for front-end development.
+
+## Values
+
+This boilerplate aims to provide a way to start a new project with everything from testing to ci/cd out of the box.
+
+Keeping the dependencies up to date is a priority.
+
+You should, with this boilerplate only focus on coding rocking react components! Nothing else!
 
 ## Installation
 
-Start by cloning this repositories then use either `yarn install` or `npm install` to download the dependencies.
+Start by cloning this repository, then use either `yarn install` or `npm install` to download the dependencies.
 
 ## Getting Started
 
