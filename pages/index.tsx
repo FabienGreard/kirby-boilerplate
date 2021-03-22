@@ -1,27 +1,57 @@
-import Header from 'components/Header';
+import Head from 'components/Head';
 import { useIntl } from 'react-intl';
+
+import Button from 'design-system/Button';
+
+import ReactSVG from 'components/Icons/React';
+import { withLink } from 'components/Link';
 
 import { VERSION } from 'utils/constant';
 
-import ReactSVG from 'components/Icons/React';
+import * as langs from 'langs';
 
-export default function Home() {
-  const { formatMessage, formatDate } = useIntl();
+const Main = () => {
+  const { formatMessage } = useIntl();
 
   return (
-    <div className="flex flex-col h-screen">
-      <Header />
-      <main className="flex flex-col items-center justify-center w-screen h-full space-y-10">
-        <h1 className="text-6xl my-6">{formatMessage({ id: 'greetings' })}</h1>
-        <ReactSVG className="animate-spin-slow" size={128} />
-        <p className="text-sm">
-          {formatMessage({ id: 'editingMessage' })}
-          <code className="bg-yellow-100 px-1">pages/index.js</code>
-        </p>
-      </main>
-      <footer className="flex items-center justify-center h-10">
-        <span className="text-sm">{`v.${VERSION} - ${formatDate(Date.now())}`}</span>
-      </footer>
+    <main className="flex flex-col justify-center items-center h-full space-y-10">
+      <h1 className="text-4xl my-6 md:text-6xl">{formatMessage({ id: 'greetings' })}</h1>
+      <ReactSVG className="animate-spin-slow w-24 h-24 md:w-32 md:h-32" />
+      <p className="text-sm md:text-base">
+        {formatMessage({ id: 'editingMessage' })}
+        <code className="bg-yellow-100 p-1 mx-1">pages/index.js</code>
+      </p>
+    </main>
+  );
+};
+
+const Footer = () => {
+  const { formatDate } = useIntl();
+
+  const ButtonWithLink = withLink(Button);
+
+  const Langs = () => (
+    <div className="flex justify-center space-x-1">
+      {Object.keys(langs).map(lang => (
+        <ButtonWithLink key={lang} locale={lang} href="/" label={lang} />
+      ))}
+    </div>
+  );
+
+  return (
+    <footer className="text-xs md:text-sm space-y-1">
+      <Langs />
+      <p>{`v.${VERSION} - ${formatDate(Date.now())}`}</p>
+    </footer>
+  );
+};
+
+export default function Home() {
+  return (
+    <div className="flex flex-col h-screen items-center p-1 md:p-2">
+      <Head />
+      <Main />
+      <Footer />
     </div>
   );
 }

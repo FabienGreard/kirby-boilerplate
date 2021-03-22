@@ -2,10 +2,11 @@ import type { AppProps } from 'next/app';
 import { IntlProvider } from 'react-intl';
 import { useRouter } from 'next/router';
 
+import useServiceWorker from 'hooks/useServiceWorker';
+
 import * as locales from 'langs';
 
 import 'tailwindcss/tailwind.css';
-import useServiceWorker from 'hooks/useServiceWorker';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();

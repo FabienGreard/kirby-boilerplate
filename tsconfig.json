@@ -17,6 +17,7 @@
     "jsx": "preserve",
     "paths": {
       "components/*": ["components/*"],
+      "design-system/*": ["design-system/*"],
       "utils/*": ["utils/*"],
       "langs/*": ["langs/*"],
       "hooks/*": ["hooks/*"]
