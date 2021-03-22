@@ -22,10 +22,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node_modules-build-
 
-      - name: Node12
+      - name: Node14
         uses: actions/setup-node@v2
         with:
-          node-version: '12'
+          node-version: '14'
 
       - name: Install
         run: npm install && npm install -g @lhci/cli@0.7.x
@@ -56,7 +56,7 @@ jobs:
       - name: Node12
         uses: actions/setup-node@v2
         with:
-          node-version: '12'
+          node-version: '14'
 
       - name: Install
         run: yarn install
@@ -88,21 +88,28 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node_modules-build-
 
-      - name: Node12
+      - name: Node14
         uses: actions/setup-node@v2
         with:
-          node-version: '12'
+          node-version: '14'
 
       - name: Install
         run: yarn install
 
+      - name: Create URL
+        run: |
+          repository=`echo ${GITHUB_REPOSITORY} | sed 's/.*\///g' | tr [:upper:] [:lower:]`
+          branch=`echo ${GITHUB_REF} | sed 's/.*\///g' | tr [:upper:] [:lower:]`
+          owner=`echo ${GITHUB_REPOSITORY} | sed 's/\/.*//g' | tr [:upper:] [:lower:]`
+          URL="https://${repository}-git-${branch}-${owner}.vercel.app"
+          echo "CYPRESS_baseUrl=${URL}" >> $GITHUB_ENV
+          echo ${{ github.event.deployment.id }}
+
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          build: yarn build
           install: false
-          start: yarn start
-          wait-on: 'http://localhost:3000'
+          wait-on: ${{ env.CYPRESS_baseUrl }}/api/healthcheck
           wait-on-timeout: 120
 
       - name: Store Artifact

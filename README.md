@@ -1,4 +1,5 @@
 [![Tests](https://github.com/FabienGreard/front-end-rocks-boilerplate/actions/workflows/tests.yml/badge.svg)](https://github.com/FabienGreard/front-end-rocks-boilerplate/actions/workflows/tests.yml)
+[![CodeQL](https://github.com/FabienGreard/front-end-rocks-boilerplate/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/FabienGreard/front-end-rocks-boilerplate/actions/workflows/codeql-analysis.yml)
 
 # front-end-rocks-boilerplate
 
@@ -22,18 +23,24 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Commands
 
-| Commands |          Info          |                                   Description |
-| -------- | :--------------------: | --------------------------------------------: |
-| dev      |        next dev        |                        Launch app in dev mode |
-| build    |       next build       |              Build the app for production use |
-| start    |       next start       |                         Launch app from build |
-| format   |   prettier --write .   |                                Format project |
-| lint     |     eslint --fix .     |                                  Lint project |
-| test     |          jest          |                                   Launch test |
-| coverage |    jest --coverage     |                 Generate a coverage from test |
-| e2e      | cypress run --headless |                               Launch e2e test |
-| prepare  |     husky install      | This is need from husky to set up the project |
-| clear    | node scripts/clear.js  |                 clear node_modules and \*lock |
+| Commands     |                      Info                       |                                   Description |
+| ------------ | :---------------------------------------------: | --------------------------------------------: |
+| dev          |                    next dev                     |                        Launch app in dev mode |
+| dev:test     |                  jest --watch                   |                                   Launch test |
+| dev:coverage |             jest --coverag --watch              |                 Generate a coverage from test |
+| dev:e2e      |                   cypress run                   |                               Launch e2e test |
+| build        |                   next build                    |              Build the app for production use |
+| start        |                   next start                    |                         Launch app from build |
+| format       |               prettier --write .                |                                Format project |
+| lint         |                 eslint --fix .                  |                                  Lint project |
+| test         |                  jest --silent                  |                                   Launch test |
+| coverage     |            jest --coverage --silent             |                 Generate a coverage from test |
+| e2e          |             cypress run --headless              |                               Launch e2e test |
+| prepare      |                  husky install                  | This is need from husky to set up the project |
+| bump:patch   | standard-version --release-as patch --no-verify |                            v.0.0.0 => v.0.0.1 |
+| bump:minor   | standard-version --release-as minor --no-verify |                            v.0.0.0 => v.0.1.0 |
+| bump:major   | standard-version --release-as major --no-verify |                            v.0.0.0 => v.1.0.0 |
+| clear        |              node scripts/clear.js              |                 clear node_modules and \*lock |
 
 ## Acknowledgement
 
@@ -49,11 +56,18 @@ This project is build with :
 - [Eslint](https://eslint.org/)
 - [husky](https://typicode.github.io/husky/#/)
 - [commitlint](https://commitlint.js.org/#/)
+- [standard-version](https://github.com/conventional-changelog/standard-version)
 - [vscode](https://code.visualstudio.com/)
+
+## Tests
+
+This project use [testing-library](https://testing-library.com/) for both unit test and e2e.
+
+- [react-hooks](https://react-hooks-testing-library.com/)
 
 ## Git Commit Convention
 
-Using [gitmoji](https://gitmoji.dev/) with the below types:
+Using [commitlint](https://commitlint.js.org/#/) with the below types:
 
 build
 ci
@@ -68,10 +82,10 @@ test
 chore
 wip
 
-Given the [conventionalcommits](https://www.conventionalcommits.org/en/v1.0.0/) with [gitmoji](https://gitmoji.dev/) it goes like this :
+Given the [conventionalcommits](https://www.conventionalcommits.org/en/v1.0.0/):
 
 ```
-:gitmoji:<type>[optional scope]: <description>
+<type>[optional scope]: <description>
 
 [optional body]
 
