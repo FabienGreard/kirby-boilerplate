@@ -73,6 +73,9 @@ This project is build with :
 
 This project use [testing-library](https://testing-library.com/) for both unit test and e2e.
 
+- [react](https://testing-library.com/docs/react-testing-library/intro)
+- [cypress](https://testing-library.com/docs/cypress-testing-library/intro)
+- [jest-dom](https://github.com/testing-library/jest-dom)
 - [react-hooks](https://react-hooks-testing-library.com/)
 
 ## Git Commit Convention
