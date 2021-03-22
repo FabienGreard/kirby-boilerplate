@@ -11,6 +11,7 @@
     "react",
     "react-intl",
     "jest",
+    "storybook",
     "testing-library",
     "tailwinds",
     "cypress",

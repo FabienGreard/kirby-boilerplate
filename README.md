@@ -60,6 +60,7 @@ This project is build with :
 - [Typescript](https://www.typescriptlang.org/)
 - [react-intl](https://formatjs.io/)
 - [Jest](https://jestjs.io/)
+- [storybook](https://storybook.js.org/)
 - [Cypress](https://www.cypress.io/)
 - [Prettier](https://prettier.io/)
 - [Eslint](https://eslint.org/)
