@@ -3,11 +3,19 @@
 
 # front-end-rocks-boilerplate
 
-This is an opiniated boilerplate with rocking tools for front-end development
+This is an opinionated boilerplate with rocking tools for front-end development.
+
+## Values
+
+This boilerplate aims to provide a way to start a new project with everything from testing to ci/cd out of the box.
+
+Keeping the dependencies up to date is a priority.
+
+You should, with this boilerplate only focus on coding rocking react components! Nothing else!
 
 ## Installation
 
-Start by cloning this repositories then use either `yarn install` or `npm install` to download the dependencies.
+Start by cloning this repository, then use either `yarn install` or `npm install` to download the dependencies.
 
 ## Getting Started
 
@@ -36,11 +44,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 | test         |                  jest --silent                  |                                   Launch test |
 | coverage     |            jest --coverage --silent             |                 Generate a coverage from test |
 | e2e          |             cypress run --headless              |                               Launch e2e test |
-| prepare      |                  husky install                  | This is need from husky to set up the project |
+| storybook    |             start-storybook -p 6006             |              Launch storybook (design-system) |
 | bump:patch   | standard-version --release-as patch --no-verify |                            v.0.0.0 => v.0.0.1 |
 | bump:minor   | standard-version --release-as minor --no-verify |                            v.0.0.0 => v.0.1.0 |
 | bump:major   | standard-version --release-as major --no-verify |                            v.0.0.0 => v.1.0.0 |
 | clear        |              node scripts/clear.js              |                 clear node_modules and \*lock |
+| prepare      |                  husky install                  | This is need from husky to set up the project |
 
 ## Acknowledgement
 
@@ -51,6 +60,7 @@ This project is build with :
 - [Typescript](https://www.typescriptlang.org/)
 - [react-intl](https://formatjs.io/)
 - [Jest](https://jestjs.io/)
+- [storybook](https://storybook.js.org/)
 - [Cypress](https://www.cypress.io/)
 - [Prettier](https://prettier.io/)
 - [Eslint](https://eslint.org/)
@@ -63,6 +73,9 @@ This project is build with :
 
 This project use [testing-library](https://testing-library.com/) for both unit test and e2e.
 
+- [react](https://testing-library.com/docs/react-testing-library/intro)
+- [cypress](https://testing-library.com/docs/cypress-testing-library/intro)
+- [jest-dom](https://github.com/testing-library/jest-dom)
 - [react-hooks](https://react-hooks-testing-library.com/)
 
 ## Git Commit Convention

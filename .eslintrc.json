@@ -46,7 +46,7 @@
     "react/require-default-props": 0,
     "react/prop-types": 0,
     "react/react-in-jsx-scope": 0,
-    "react/jsx-props-no-spreading": [1, { "exceptions": ["Component", "svg"] }],
+    "react/jsx-props-no-spreading": [1, { "html": "ignore", "exceptions": ["Component"] }],
     "arrow-parens": 0,
     "no-undef": 0,
     "no-console": 1,

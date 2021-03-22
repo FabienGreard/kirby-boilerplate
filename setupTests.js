@@ -1,3 +1,5 @@
+import '@testing-library/jest-dom';
+
 jest.mock('next/head', () => {
   // eslint-disable-next-line global-require
   const ReactDOMServer = require('react-dom/server');

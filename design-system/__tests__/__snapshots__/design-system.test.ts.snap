@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Example/Button Large 1`] = `
+<button
+  className="uppercase tracking-wider box-border border border-gray-200 text-black focus:outline-none focus:border-gray-400 hover:border-gray-400 rounded-lg text-lg px-4 py-3"
+  style={
+    Object {
+      "backgroundColor": undefined,
+    }
+  }
+  type="button"
+>
+  Button
+</button>
+`;
+
+exports[`Storyshots Example/Button Primary 1`] = `
+<button
+  className="uppercase tracking-wider box-border bg-blue-200 border border-blue-200 text-white focus:outline-none focus:bg-blue-400 focus:border-blue-400 hover:bg-blue-400 hover:border-blue-400 rounded-md text-md px-3 py-2"
+  style={
+    Object {
+      "backgroundColor": undefined,
+    }
+  }
+  type="button"
+>
+  Button
+</button>
+`;
+
+exports[`Storyshots Example/Button Secondary 1`] = `
+<button
+  className="uppercase tracking-wider box-border border border-gray-200 text-black focus:outline-none focus:border-gray-400 hover:border-gray-400 rounded-md text-md px-3 py-2"
+  style={
+    Object {
+      "backgroundColor": undefined,
+    }
+  }
+  type="button"
+>
+  Button
+</button>
+`;
+
+exports[`Storyshots Example/Button Small 1`] = `
+<button
+  className="uppercase tracking-wider box-border border border-gray-200 text-black focus:outline-none focus:border-gray-400 hover:border-gray-400 rounded-sm text-sm px-2 py-1"
+  style={
+    Object {
+      "backgroundColor": undefined,
+    }
+  }
+  type="button"
+>
+  Button
+</button>
+`;
