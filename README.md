@@ -44,11 +44,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 | test         |                  jest --silent                  |                                   Launch test |
 | coverage     |            jest --coverage --silent             |                 Generate a coverage from test |
 | e2e          |             cypress run --headless              |                               Launch e2e test |
-| prepare      |                  husky install                  | This is need from husky to set up the project |
+| storybook    |             start-storybook -p 6006             |              Launch storybook (design-system) |
 | bump:patch   | standard-version --release-as patch --no-verify |                            v.0.0.0 => v.0.0.1 |
 | bump:minor   | standard-version --release-as minor --no-verify |                            v.0.0.0 => v.0.1.0 |
 | bump:major   | standard-version --release-as major --no-verify |                            v.0.0.0 => v.1.0.0 |
 | clear        |              node scripts/clear.js              |                 clear node_modules and \*lock |
+| prepare      |                  husky install                  | This is need from husky to set up the project |
 
 ## Acknowledgement
 

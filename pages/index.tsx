@@ -1,10 +1,12 @@
 import Head from 'components/Head';
-import Link from 'next/link';
-
 import { useIntl } from 'react-intl';
 
-import { VERSION } from 'utils/constant';
+import Button from 'design-system/Button';
+
 import ReactSVG from 'components/Icons/React';
+import { withLink } from 'components/Link';
+
+import { VERSION } from 'utils/constant';
 
 import * as langs from 'langs';
 
@@ -26,17 +28,12 @@ const Main = () => {
 const Footer = () => {
   const { formatDate } = useIntl();
 
+  const ButtonWithLink = withLink(Button);
+
   const Langs = () => (
-    <div className="flex justify-center">
+    <div className="flex justify-center space-x-1">
       {Object.keys(langs).map(lang => (
-        <Link key={lang} locale={lang} href="/" passHref>
-          <button
-            type="button"
-            className="bg-gray-100 box-border w-12 h-12 mx-0.5 hover:bg-gray-300 focus:bg-gray-300 focus:outline-none select-none"
-          >
-            {lang}
-          </button>
-        </Link>
+        <ButtonWithLink key={lang} locale={lang} href="/" label={lang} />
       ))}
     </div>
   );
