@@ -54,7 +54,7 @@
     "@storybook/addon-essentials": "v6.2.2",
     "@storybook/addon-postcss": "^2.0.0",
     "@storybook/addon-storyshots": "v6.2.0-rc.7",
-    "@storybook/react": "v6.2.0-rc.7",
+    "@storybook/react": "v6.2.3",
     "@testing-library/cypress": "^7.0.5",
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
