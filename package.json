@@ -48,7 +48,7 @@
     "react-intl": "^5.15.7"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.10",
+    "@babel/core": "^7.13.14",
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
     "@storybook/addon-essentials": "v6.2.3",
