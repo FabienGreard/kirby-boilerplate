@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
-    "@commitlint/cli": "^12.0.1",
+    "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
     "@storybook/addon-essentials": "v6.2.2",
     "@storybook/addon-postcss": "^2.0.0",
