@@ -1,4 +1,4 @@
 export default {
-  greetings: 'Hello World !',
+  greetings: 'Hello {name} !',
   editingMessage: 'Get started by editing',
 };

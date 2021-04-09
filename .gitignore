@@ -64,3 +64,6 @@ yarn-error.log*
 
 # vscode
 *.code-workspace
+
+# Apollo
+graphql-schema.json

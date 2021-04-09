@@ -1,4 +1,4 @@
 export default {
-  greetings: 'Bonjour le monde !',
+  greetings: 'Bonjour {name} !',
   editingMessage: 'Commencez par éditer',
 };

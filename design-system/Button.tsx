@@ -19,6 +19,10 @@ export interface ButtonProps {
    * Optional click handler
    */
   onClick?: () => void;
+  /**
+   * Optional className overidel
+   */
+  className?: string;
 }
 
 /**
@@ -29,10 +33,11 @@ export const Button: React.FC<ButtonProps> = ({
   size = 'medium',
   backgroundColor,
   label,
+  className,
   ...props
 }) => {
   const BASE_BUTTON = 'uppercase tracking-wider box-border';
-  const PRIMARY_BUTTON = `${BASE_BUTTON} bg-blue-200 border border-blue-200 text-white focus:outline-none focus:bg-blue-400 focus:border-blue-400 hover:bg-blue-400 hover:border-blue-400`;
+  const PRIMARY_BUTTON = `${BASE_BUTTON} bg-blue-400 border border-blue-400 text-white focus:outline-none focus:bg-blue-600 focus:border-blue-600 hover:bg-blue-600 hover:border-blue-600`;
   const SECONDARY_BUTTON = `${BASE_BUTTON} border border-gray-200 text-black focus:outline-none focus:border-gray-400 hover:border-gray-400`;
 
   const SIZE_BUTTON = {
@@ -44,7 +49,7 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <button
       type="button"
-      className={`${primary ? PRIMARY_BUTTON : SECONDARY_BUTTON} ${SIZE_BUTTON[size]}`}
+      className={`${primary ? PRIMARY_BUTTON : SECONDARY_BUTTON} ${SIZE_BUTTON[size]} ${className}`}
       style={{ backgroundColor }}
       {...props}
     >

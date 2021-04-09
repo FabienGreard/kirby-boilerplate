@@ -67,7 +67,7 @@ jobs:
       - name: Store Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: build
+          name: Bundle analyzer
           path: |
             .next/analyze
             .next/server/analyze
