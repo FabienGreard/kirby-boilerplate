@@ -28,7 +28,7 @@
     "dev": "next dev",
     "dev:test": "jest --watch",
     "dev:coverage": "jest --coverage --watch",
-    "dev:e2e": "cypress run",
+    "dev:e2e": "cypress open",
     "build": "ANALYZE=true next build",
     "start": "next start",
     "format": "prettier --write .",
