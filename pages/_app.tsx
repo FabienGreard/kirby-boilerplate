@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const { locale, defaultLocale } = router;
   const messages = locales[locale].default;
 
-  useServiceWorker(true);
+  useServiceWorker();
 
   return (
     <ApolloProvider client={client}>

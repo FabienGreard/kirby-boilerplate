@@ -149,8 +149,3 @@ async function getCache(request) {
     return null;
   }
 }
-
-async function getPostKey(request) {
-  let body = await request.json();
-  return JSON.stringify(body);
-}
