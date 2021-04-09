@@ -2,7 +2,7 @@
   "ci": {
     "collect": {
       "startServerCommand": "yarn start",
-      "url": ["http://localhost:3000/"],
+      "url": ["http://localhost:3000/", "http://localhost:3000/ssg", "http://localhost:3000/ssr"],
       "startServerReadyPattern": "started",
       "settings": {
         "skipAudits": ["redirects-http"]

@@ -32,13 +32,13 @@ export const Button: React.FC<ButtonProps> = ({
   primary = false,
   size = 'medium',
   backgroundColor,
+  className = '',
   label,
-  className,
   ...props
 }) => {
   const BASE_BUTTON = 'uppercase tracking-wider box-border';
-  const PRIMARY_BUTTON = `${BASE_BUTTON} bg-blue-400 border border-blue-400 text-white focus:outline-none focus:bg-blue-600 focus:border-blue-600 hover:bg-blue-600 hover:border-blue-600`;
-  const SECONDARY_BUTTON = `${BASE_BUTTON} border border-gray-200 text-black focus:outline-none focus:border-gray-400 hover:border-gray-400`;
+  const PRIMARY_BUTTON = `${BASE_BUTTON} bg-blue-600 border border-blue-600 text-white focus:outline-none focus:bg-blue-800 focus:border-blue-800 hover:bg-blue-800 hover:border-blue-800`;
+  const SECONDARY_BUTTON = `${BASE_BUTTON} border border-gray-400 text-black focus:outline-none focus:border-gray-800 hover:border-gray-800`;
 
   const SIZE_BUTTON = {
     small: 'rounded-sm text-sm px-2 py-1',
@@ -49,7 +49,7 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <button
       type="button"
-      className={`${primary ? PRIMARY_BUTTON : SECONDARY_BUTTON} ${SIZE_BUTTON[size]} ${className}`}
+      className={`${primary ? PRIMARY_BUTTON : SECONDARY_BUTTON} ${SIZE_BUTTON[size]} ${className}`.trim()}
       style={{ backgroundColor }}
       {...props}
     >
