@@ -1,17 +1,17 @@
 import Head from 'components/Head';
 import { useIntl } from 'react-intl';
-import { useQuery } from '@apollo/client';
 
 import Button from 'design-system/Button';
 
 import ReactSVG from 'components/Icons/React';
 import { withLink } from 'components/Link';
+
 import { ViewerQuery } from 'apollo/operations/viewer';
 import { ViewerQuery as ViewerQueryType } from 'types/ViewerQuery';
 
-import { VERSION } from 'utils/constant';
+import useClientQuery from 'hooks/useClientQuery';
 
-import useHasMounted from 'hooks/useHasMounted';
+import { VERSION } from 'utils/constant';
 
 import * as langs from 'langs';
 
@@ -19,13 +19,11 @@ const ButtonWithLink = withLink(Button);
 
 const Main = () => {
   const { formatMessage } = useIntl();
-  const {
-    data: { viewer },
-  } = useQuery<ViewerQueryType>(ViewerQuery);
+  const { data } = useClientQuery<ViewerQueryType>(ViewerQuery);
 
   return (
     <main className="flex flex-col justify-center items-center h-full space-y-10">
-      <h1 className="text-4xl my-6 md:text-6xl">{formatMessage({ id: 'greetings' }, { name: viewer.name })}</h1>
+      <h1 className="text-4xl my-6 md:text-6xl">{formatMessage({ id: 'greetings' }, { name: data?.viewer?.name })}</h1>
       <ReactSVG className="animate-spin-slow w-24 h-24 md:w-32 md:h-32" />
       <p className="text-sm md:text-base">
         {formatMessage({ id: 'editingMessage' })}
@@ -46,7 +44,7 @@ const Footer = () => {
   const Langs = () => (
     <div className="flex justify-center space-x-1">
       {Object.keys(langs).map(lang => (
-        <ButtonWithLink key={lang} locale={lang} href="/" label={lang} />
+        <ButtonWithLink key={lang} locale={lang} href="/" label={lang} size="small" />
       ))}
     </div>
   );
@@ -60,12 +58,10 @@ const Footer = () => {
 };
 
 export default function Home() {
-  const hasMounted = useHasMounted();
-
   return (
     <div className="flex flex-col h-screen items-center p-1 md:p-2">
       <Head />
-      {hasMounted && <Main />}
+      <Main />
       <Footer />
     </div>
   );

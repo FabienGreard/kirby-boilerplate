@@ -42,7 +42,7 @@ const Footer = () => {
   const Langs = () => (
     <div className="flex justify-center space-x-1">
       {Object.keys(langs).map(lang => (
-        <ButtonWithLink key={lang} locale={lang} href="/" label={lang} />
+        <ButtonWithLink key={lang} locale={lang} href="/" label={lang} size="small" />
       ))}
     </div>
   );

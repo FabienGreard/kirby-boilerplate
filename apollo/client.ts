@@ -19,6 +19,7 @@ function createIsomorphLink() {
 }
 
 export default new ApolloClient({
+  ssrMode: typeof window === 'undefined',
   link: createIsomorphLink(),
   cache: new InMemoryCache(),
 });

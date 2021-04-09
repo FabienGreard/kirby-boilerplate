@@ -1,16 +1,22 @@
 import { ReactElement } from 'react';
 import { render, RenderOptions } from '@testing-library/react';
+import { MockedProvider, MockedResponse } from '@apollo/client/testing';
 import { IntlProvider } from 'react-intl';
 import * as langs from 'langs';
 
-const customTestRender = (ui: ReactElement, options?: Omit<RenderOptions & { locale: string }, 'queries'>) => {
-  const { locale } = options;
+const customTestRender = (
+  ui: ReactElement,
+  options?: Omit<RenderOptions & { locale?: string; mocks: MockedResponse[] }, 'queries'>,
+) => {
+  const { locale = 'en', mocks = [] } = options;
 
   const AllTheProviders = ({ children }: { children: ReactElement }) => {
     return (
-      <IntlProvider locale={locale} messages={langs[locale].default} defaultLocale="en">
-        {children}
-      </IntlProvider>
+      <MockedProvider mocks={mocks}>
+        <IntlProvider locale={locale} messages={langs[locale].default} defaultLocale="en">
+          {children}
+        </IntlProvider>
+      </MockedProvider>
     );
   };
 
