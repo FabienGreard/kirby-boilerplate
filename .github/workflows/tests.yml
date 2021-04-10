@@ -58,6 +58,10 @@ jobs:
         with:
           node-version: '14'
 
+      - name: Install
+        if: steps.yarn-node-module-cache.outputs.cache-hit != 'true'
+        run: yarn install
+
       - name: Build
         run: yarn build
 
@@ -93,6 +97,10 @@ jobs:
           node-version: '14'
 
       - name: Install
+        if: steps.yarn-build-cache.outputs.cache-hit != 'true'
+        run: yarn install
+
+      - name: Install Lhci
         run: npm install -g @lhci/cli@0.7.x
 
       - name: Lhci
@@ -122,6 +130,14 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'
+
+      - name: Install
+        if: steps.yarn-build-cache.outputs.cache-hit != 'true'
+        run: yarn install
+
+      - name: Build
+        if: steps.yarn-build-cache.outputs.cache-hit != 'true'
+        run: yarn build
 
       - name: Cypress run
         uses: cypress-io/github-action@v2
