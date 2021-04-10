@@ -3,37 +3,6 @@ name: Tests
 on: [push]
 
 jobs:
-  perf:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Caches
-        uses: actions/cache@v2
-        id: yarn-build-cache
-        with:
-          path: |
-            .next/cache
-            node_modules
-            ~/.cache/Cypress
-            build
-          key: ${{ runner.os }}-node_modules-build-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-node_modules-build-
-
-      - name: Node14
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-
-      - name: Install
-        run: npm install && npm install -g @lhci/cli@0.7.x
-
-      - name: Lhci
-        run: lhci autorun
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
   coverage:
     runs-on: ubuntu-latest
     steps:
@@ -42,23 +11,18 @@ jobs:
 
       - name: Caches
         uses: actions/cache@v2
-        id: yarn-build-cache
+        id: yarn-node-module-cache
         with:
-          path: |
-            .next/cache
-            node_modules
-            ~/.cache/Cypress
-            build
-          key: ${{ runner.os }}-node_modules-build-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-node_modules-build-
+          path: node_modules
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
 
-      - name: Node12
+      - name: Node14
         uses: actions/setup-node@v2
         with:
           node-version: '14'
 
       - name: Install
+        if: steps.yarn-node-module-cache.outputs.cache-hit != 'true'
         run: yarn install
 
       - name: Jest
@@ -69,7 +33,8 @@ jobs:
         with:
           name: coverage
           path: coverage
-  e2e:
+  build:
+    needs: coverage
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -80,13 +45,12 @@ jobs:
         id: yarn-build-cache
         with:
           path: |
-            .next/cache
+            .next
             node_modules
             ~/.cache/Cypress
-            build
-          key: ${{ runner.os }}-node_modules-build-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-build-
           restore-keys: |
-            ${{ runner.os }}-node_modules-build-
+            ${{ runner.os }}-node_modules-
 
       - name: Node14
         uses: actions/setup-node@v2
@@ -94,13 +58,91 @@ jobs:
           node-version: '14'
 
       - name: Install
+        if: steps.yarn-build-cache.outputs.cache-hit != 'true'
         run: yarn install
+
+      - name: Build
+        run: yarn build
+
+      - name: Store Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Bundle analyzer
+          path: |
+            .next/analyze
+            .next/server/analyze
+  perf:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Caches
+        uses: actions/cache@v2
+        id: yarn-build-cache
+        with:
+          path: |
+            .next
+            node_modules
+            ~/.cache/Cypress
+          key: ${{ runner.os }}-build-
+          restore-keys: |
+            ${{ runner.os }}-build-
+
+      - name: Node14
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install
+        if: steps.yarn-build-cache.outputs.cache-hit != 'true'
+        run: yarn install
+
+      - name: Install Lhci
+        run: npm install -g @lhci/cli@0.7.x
+
+      - name: Lhci
+        run: lhci autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+  e2e:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Caches
+        uses: actions/cache@v2
+        id: yarn-build-cache
+        with:
+          path: |
+            .next
+            node_modules
+            ~/.cache/Cypress
+          key: ${{ runner.os }}-build-
+          restore-keys: |
+            ${{ runner.os }}-build-
+
+      - name: Node14
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install
+        if: steps.yarn-build-cache.outputs.cache-hit != 'true'
+        run: yarn install
+
+      - name: Build
+        if: steps.yarn-build-cache.outputs.cache-hit != 'true'
+        run: yarn build
 
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          build: yarn build
           install: false
+          headless: true
           start: yarn start
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120

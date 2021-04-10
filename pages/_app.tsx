@@ -1,8 +1,10 @@
 import type { AppProps } from 'next/app';
-import { IntlProvider } from 'react-intl';
 import { useRouter } from 'next/router';
+import { IntlProvider } from 'react-intl';
+import { ApolloProvider } from '@apollo/client';
 
 import useServiceWorker from 'hooks/useServiceWorker';
+import useClient from 'apollo/client';
 
 import * as locales from 'langs';
 
@@ -13,11 +15,15 @@ export default function App({ Component, pageProps }: AppProps) {
   const { locale, defaultLocale } = router;
   const messages = locales[locale].default;
 
+  const apolloClient = useClient(pageProps.initialApolloState);
+
   useServiceWorker();
 
   return (
-    <IntlProvider locale={locale} defaultLocale={defaultLocale} messages={messages}>
-      <Component {...pageProps} />
-    </IntlProvider>
+    <ApolloProvider client={apolloClient}>
+      <IntlProvider locale={locale} defaultLocale={defaultLocale} messages={messages}>
+        <Component {...pageProps} />
+      </IntlProvider>
+    </ApolloProvider>
   );
 }
