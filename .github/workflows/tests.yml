@@ -15,8 +15,6 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-node_modules-
 
       - name: Node14
         uses: actions/setup-node@v2
@@ -24,6 +22,7 @@ jobs:
           node-version: '14'
 
       - name: Install
+        if: steps.yarn-node-module-cache.outputs.cache-hit != 'true'
         run: yarn install
 
       - name: Jest
