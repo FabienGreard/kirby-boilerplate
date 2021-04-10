@@ -1,8 +1,8 @@
-import Head from 'components/Head';
 import { useIntl } from 'react-intl';
 
 import Button from 'design-system/Button';
 
+import Head from 'components/Head';
 import ReactSVG from 'components/Icons/React';
 import { withLink } from 'components/Link';
 

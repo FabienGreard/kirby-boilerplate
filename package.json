@@ -94,5 +94,11 @@
     "standard-version": "^9.1.1",
     "tailwindcss": "^2.0.4",
     "typescript": "^4.2.3"
-  }
+  },
+  "browserslist": [
+    ">0.3%",
+    "not ie 11",
+    "not dead",
+    "not op_mini all"
+  ]
 }

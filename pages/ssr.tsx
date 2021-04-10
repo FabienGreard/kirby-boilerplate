@@ -1,12 +1,13 @@
-import Head from 'components/Head';
+import { InferGetServerSidePropsType } from 'next';
 import { useIntl } from 'react-intl';
 
 import Button from 'design-system/Button';
 
+import Head from 'components/Head';
 import ReactSVG from 'components/Icons/React';
 import { withLink } from 'components/Link';
 
-import client from 'apollo/client';
+import { initializeApollo } from 'apollo/client';
 import { ViewerQuery } from 'apollo/operations/viewer';
 import { ViewerQuery as ViewerQueryType } from 'types/ViewerQuery';
 
@@ -55,17 +56,9 @@ const Footer = () => {
   );
 };
 
-export default function Home({ name }: { name: string }) {
-  return (
-    <div className="flex flex-col h-screen items-center p-1 md:p-2">
-      <Head />
-      <Main name={name} />
-      <Footer />
-    </div>
-  );
-}
-
 export async function getServerSideProps() {
+  const client = initializeApollo();
+
   const {
     data: { viewer },
   } = await client.query<ViewerQueryType>({
@@ -75,6 +68,17 @@ export async function getServerSideProps() {
   return {
     props: {
       name: viewer.name,
+      initialApolloState: client.cache.extract(),
     },
   };
+}
+
+export default function Home({ name }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  return (
+    <div className="flex flex-col h-screen items-center p-1 md:p-2">
+      <Head />
+      <Main name={name} />
+      <Footer />
+    </div>
+  );
 }

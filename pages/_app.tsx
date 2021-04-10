@@ -4,7 +4,7 @@ import { IntlProvider } from 'react-intl';
 import { ApolloProvider } from '@apollo/client';
 
 import useServiceWorker from 'hooks/useServiceWorker';
-import client from 'apollo/client';
+import useClient from 'apollo/client';
 
 import * as locales from 'langs';
 
@@ -15,10 +15,12 @@ export default function App({ Component, pageProps }: AppProps) {
   const { locale, defaultLocale } = router;
   const messages = locales[locale].default;
 
+  const apolloClient = useClient(pageProps.initialApolloState);
+
   useServiceWorker();
 
   return (
-    <ApolloProvider client={client}>
+    <ApolloProvider client={apolloClient}>
       <IntlProvider locale={locale} defaultLocale={defaultLocale} messages={messages}>
         <Component {...pageProps} />
       </IntlProvider>
