@@ -11,7 +11,6 @@ jobs:
 
       - name: Caches
         uses: actions/cache@v2
-        id: yarn-node_module-cache
         with:
           path: node_modules
           key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
@@ -43,13 +42,12 @@ jobs:
 
       - name: Caches
         uses: actions/cache@v2
-        id: yarn-build-cache
         with:
           path: |
             .next
             node_modules
             ~/.cache/Cypress
-          key: ${{ runner.os }}-build
+          key: ${{ runner.os }}-build-
           restore-keys: |
             ${{ runner.os }}-node_modules-
 
@@ -80,13 +78,12 @@ jobs:
 
       - name: Caches
         uses: actions/cache@v2
-        id: yarn-build-cache
         with:
           path: |
             .next
             node_modules
             ~/.cache/Cypress
-          key: ${{ runner.os }}-build
+          key: ${{ runner.os }}-build-
           restore-keys: |
             ${{ runner.os }}-build-
 
@@ -111,13 +108,12 @@ jobs:
 
       - name: Caches
         uses: actions/cache@v2
-        id: yarn-build-cache
         with:
           path: |
             .next
             node_modules
             ~/.cache/Cypress
-          key: ${{ runner.os }}-build
+          key: ${{ runner.os }}-build-
           restore-keys: |
             ${{ runner.os }}-build-
 
