@@ -59,7 +59,7 @@ jobs:
           node-version: '14'
 
       - name: Install
-        if: steps.yarn-node-module-cache.outputs.cache-hit != 'true'
+        if: steps.yarn-build-cache.outputs.cache-hit != 'true'
         run: yarn install
 
       - name: Build
