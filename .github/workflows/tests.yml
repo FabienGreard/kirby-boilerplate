@@ -11,7 +11,7 @@ jobs:
 
       - name: Caches
         uses: actions/cache@v2
-        id: yarn-build-cache
+        id: yarn-node_module-cache
         with:
           path: node_modules
           key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
@@ -49,7 +49,7 @@ jobs:
             .next
             node_modules
             ~/.cache/Cypress
-          key: ${{ runner.os }}-build-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-build
           restore-keys: |
             ${{ runner.os }}-node_modules-
 
@@ -86,7 +86,7 @@ jobs:
             .next
             node_modules
             ~/.cache/Cypress
-          key: ${{ runner.os }}-build-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-build
           restore-keys: |
             ${{ runner.os }}-build-
 
@@ -96,7 +96,7 @@ jobs:
           node-version: '14'
 
       - name: Install
-        run: npm install && npm install -g @lhci/cli@0.7.x
+        run: yarn install && npm install -g @lhci/cli@0.7.x
 
       - name: Lhci
         run: lhci autorun
@@ -117,7 +117,7 @@ jobs:
             .next
             node_modules
             ~/.cache/Cypress
-          key: ${{ runner.os }}-build-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-build
           restore-keys: |
             ${{ runner.os }}-build-
 
