@@ -18,6 +18,8 @@
     "paths": {
       "components/*": ["components/*"],
       "design-system/*": ["design-system/*"],
+      "apollo/*": ["apollo/*"],
+      "types/*": ["types/*"],
       "utils/*": ["utils/*"],
       "langs/*": ["langs/*"],
       "hooks/*": ["hooks/*"]

@@ -31,31 +31,34 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Commands
 
-| Commands     |                      Info                       |                                   Description |
-| ------------ | :---------------------------------------------: | --------------------------------------------: |
-| dev          |                    next dev                     |                        Launch app in dev mode |
-| dev:test     |                  jest --watch                   |                                   Launch test |
-| dev:coverage |             jest --coverag --watch              |                 Generate a coverage from test |
-| dev:e2e      |                   cypress run                   |                               Launch e2e test |
-| build        |                   next build                    |              Build the app for production use |
-| start        |                   next start                    |                         Launch app from build |
-| format       |               prettier --write .                |                                Format project |
-| lint         |                 eslint --fix .                  |                                  Lint project |
-| test         |                  jest --silent                  |                                   Launch test |
-| coverage     |            jest --coverage --silent             |                 Generate a coverage from test |
-| e2e          |             cypress run --headless              |                               Launch e2e test |
-| storybook    |             start-storybook -p 6006             |              Launch storybook (design-system) |
-| bump:patch   | standard-version --release-as patch --no-verify |                            v.0.0.0 => v.0.0.1 |
-| bump:minor   | standard-version --release-as minor --no-verify |                            v.0.0.0 => v.0.1.0 |
-| bump:major   | standard-version --release-as major --no-verify |                            v.0.0.0 => v.1.0.0 |
-| clear        |              node scripts/clear.js              |                 clear node_modules and \*lock |
-| prepare      |                  husky install                  | This is need from husky to set up the project |
+| Commands        |                                                                     Info                                                                      |                                           Description |
+| --------------- | :-------------------------------------------------------------------------------------------------------------------------------------------: | ----------------------------------------------------: |
+| dev             |                                                                   next dev                                                                    |                                Launch app in dev mode |
+| dev:test        |                                                                 jest --watch                                                                  |                                           Launch test |
+| dev:coverage    |                                                            jest --coverag --watch                                                             |                         Generate a coverage from test |
+| dev:e2e         |                                                                 cypress open                                                                  |                                       Launch e2e test |
+| build           |                                                                  next build                                                                   |                      Build the app for production use |
+| start           |                                                                  next start                                                                   |                                 Launch app from build |
+| format          |                                                              prettier --write .                                                               |                                        Format project |
+| lint            |                                                                eslint --fix .                                                                 |                                          Lint project |
+| test            |                                                                 jest --silent                                                                 |                                           Launch test |
+| coverage        |                                                           jest --coverage --silent                                                            |                         Generate a coverage from test |
+| e2e             |                                                            cypress run --headless                                                             |                                       Launch e2e test |
+| storybook       |                                                            start-storybook -p 6006                                                            |                      Launch storybook (design-system) |
+| bump:patch      |                                                standard-version --release-as patch --no-verify                                                |                                    v.0.0.0 => v.0.0.1 |
+| bump:minor      |                                                standard-version --release-as minor --no-verify                                                |                                    v.0.0.0 => v.0.1.0 |
+| bump:major      |                                                standard-version --release-as major --no-verify                                                |                                    v.0.0.0 => v.1.0.0 |
+| apollo:download |                         npx apollo service:download --endpoint=http://localhost:3000/api/graphql graphql-schema.json                          |            download a graphql schema from an endpoint |
+| apollo:generate | npx apollo codegen:generate types --localSchemaFile=graphql-schema.json --target=typescript --tagName=gql --outputFlat --tsFileExtension=d.ts | use for generating typing files from a graphql schema |
+| clear           |                                                             node scripts/clear.js                                                             |                         clear node_modules and \*lock |
+| prepare         |                                                                 husky install                                                                 |       This is needed from husky to set up the project |
 
 ## Acknowledgement
 
 This project is build with :
 
 - [NextJs](https://nextjs.org/)
+- [Apollo](https://www.apollographql.com/)
 - [Tailwindcss](https://tailwindcss.com/)
 - [Typescript](https://www.typescriptlang.org/)
 - [react-intl](https://formatjs.io/)
@@ -104,6 +107,12 @@ Given the [conventionalcommits](https://www.conventionalcommits.org/en/v1.0.0/):
 
 [optional footer(s)]
 ```
+
+## Generate typing from graphql schema
+
+You may need to look at [apollo-tooling](https://github.com/apollographql/apollo-tooling)
+
+With the graphql endpoint running launch `yarn apollo:download` follow by `yarn apollo:generate`, this will create under `types` a typing file for each query under `apollo/operations`.
 
 ## Contributing
 

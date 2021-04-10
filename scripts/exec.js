@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const { spawn, exec } = require('child_process');
 const os = require('os');
 

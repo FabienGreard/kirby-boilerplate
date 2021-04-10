@@ -1,15 +1,19 @@
 {
   "ci": {
     "collect": {
-      "startServerCommand": "yarn build && yarn start",
-      "url": ["http://localhost:3000/"],
+      "startServerCommand": "yarn start",
+      "url": ["http://localhost:3000/", "http://localhost:3000/ssr", "http://localhost:3000/ssg"],
       "startServerReadyPattern": "started",
       "settings": {
-        "skipAudits": ["redirects-http"]
+        "skipAudits": ["redirects-http", "uses-http2"]
       }
     },
     "assert": {
-      "preset": "lighthouse:recommended"
+      "preset": "lighthouse:recommended",
+      "assertions": {
+        "unused-javascript": ["error", { "maxLength": 1 }],
+        "legacy-javascript": "off"
+      }
     },
     "upload": {
       "target": "temporary-public-storage"

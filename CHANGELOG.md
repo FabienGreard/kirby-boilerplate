@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.3.0 (2021-04-10)
+
+### Features
+
+- graphQL ([#36](https://github.com/FabienGreard/front-end-rocks-boilerplate/issues/36)) ([3083241](https://github.com/FabienGreard/front-end-rocks-boilerplate/commit/30832414a87a786d6ba429e456432cd9c66c5318))
+
 ## 1.2.0 (2021-03-22)
 
 ### Features

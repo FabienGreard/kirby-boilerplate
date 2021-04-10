@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import { fireEvent, waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
+
 import useServiceWorker from 'hooks/useServiceWorker';
 
 jest.mock('utils/constant', () => {
