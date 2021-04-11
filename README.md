@@ -1,7 +1,9 @@
-[![Tests](https://github.com/FabienGreard/front-end-rocks-boilerplate/actions/workflows/tests.yml/badge.svg)](https://github.com/FabienGreard/front-end-rocks-boilerplate/actions/workflows/tests.yml)
-[![CodeQL](https://github.com/FabienGreard/front-end-rocks-boilerplate/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/FabienGreard/front-end-rocks-boilerplate/actions/workflows/codeql-analysis.yml)
+[![Tests](https://github.com/FabienGreard/kirby-boilerplate/actions/workflows/tests.yml/badge.svg)](https://github.com/FabienGreard/kirby-boilerplate/actions/workflows/tests.yml)
+[![CodeQL](https://github.com/FabienGreard/kirby-boilerplate/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/FabienGreard/kirby-boilerplate/actions/workflows/codeql-analysis.yml)
 
-# front-end-rocks-boilerplate
+![](public/images/icons-192.png)
+
+# kirby-boilerplate
 
 This is an opinionated boilerplate with rocking tools for front-end development.
 

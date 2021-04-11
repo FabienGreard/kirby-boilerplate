@@ -1,7 +1,7 @@
 import packageJSON from 'package.json';
 
 export const SEO = {
-  title: 'FrontEnd Rocks Boilerplate',
+  title: 'Kirby Boilerplate',
   description: 'This is an opinionated boilerplate with rocking tools for front-end development.',
 };
 

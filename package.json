@@ -1,8 +1,8 @@
 {
-  "name": "front-end-rocks-boilerplate",
+  "name": "kirby-boilerplate",
   "version": "1.3.0",
   "license": "MIT",
-  "homepage": "https://github.com/FabienGreard/front-end-rocks-boilerplate#readme",
+  "homepage": "https://github.com/FabienGreard/kirby-boilerplate#readme",
   "author": "Fabien Gréard <grd.fabien@gmail.com> (http://fabiengreard.com/)",
   "description": "This is an opiniated boilerplate with rocking tools for front-end development",
   "keywords": [

@@ -18,13 +18,13 @@ describe('useClientQuery', () => {
       },
       result: {
         data: {
-          viewer: { id: '1', name: 'John' },
+          viewer: { id: '1', name: 'Kirby' },
         },
       },
     };
 
     const result = render(<Viewer />, { mocks: [viewerMock] });
 
-    expect(await result.findByText(/^John/i)).toBeVisible();
+    expect(await result.findByText(/^Kirby/i)).toBeVisible();
   });
 });
