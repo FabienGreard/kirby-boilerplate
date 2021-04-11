@@ -14,13 +14,13 @@ exports[`ReactSVG Should match snapshots 1`] = `
       transform="translate(.648 2.438) scale(.05696)"
     >
       <circle
+        class="fill-current text-primary-400"
         cx="269.529"
         cy="237.628"
-        fill="#00d8ff"
         r="50.167"
       />
       <g
-        stroke="#00d8ff"
+        class="stroke-current text-primary-400"
         stroke-width="24"
       >
         <path
