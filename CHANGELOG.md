@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-- graphQL ([#36](https://github.com/FabienGreard/kirby-boilerplate/issues/36)) ([3083241](https://github.com/FabienGreard/kirby-boilerplate/commit/30832414a87a786d6ba429e456432cd9c66c5318))
+- graphQL ([#36](https://github.com/FabienGreard/kirby-boilerplate/issues/36)) ([3083241](https://github.com/FabienGreard/kirby-boilerplate/commit/c9078cb88cd34e617dd3e2564515f351dfdf4223))
 
 ## 1.2.0 (2021-03-22)
 
