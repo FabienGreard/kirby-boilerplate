@@ -1,6 +1,6 @@
 {
-  "short_name": "FrontEnd Rocks",
-  "name": "FrontEnd Rocks Boilerplate",
+  "short_name": "Kirby",
+  "name": "Kirby Boilerplate",
   "icons": [
     {
       "src": "/images/icons-192.png",
