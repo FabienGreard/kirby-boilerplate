@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
-import { fireEvent, waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
+import { fireEvent } from '@testing-library/react';
 
 import useServiceWorker from 'hooks/useServiceWorker';
 
@@ -25,6 +25,8 @@ describe('useServiceWorker', () => {
   afterEach(() => {
     navigatorSpy.mockRestore();
     consoleSpy.mockRestore();
+
+    serviceWorkerUrl = undefined;
   });
 
   test('Should register a ServiceWorker', async () => {
@@ -37,14 +39,12 @@ describe('useServiceWorker', () => {
       },
     }));
 
-    renderHook(() => useServiceWorker(true));
+    renderHook(() => useServiceWorker({ isForce: true }));
 
     fireEvent(window, new Event('load'));
 
-    await waitFor(() => {
-      expect(console.log).toBeCalledWith('Service Worker registration successful with scope: ', 'test');
-      expect(serviceWorkerUrl).toBe('/sw.js');
-    });
+    expect(await serviceWorkerUrl).toBe('/sw.js');
+    expect(await console.log).toBeCalledWith('Service Worker registration successful with scope: ', 'test');
   });
 
   test('Should catch an error', async () => {
@@ -54,17 +54,20 @@ describe('useServiceWorker', () => {
       },
     }));
 
-    renderHook(() => useServiceWorker(true));
+    renderHook(() => useServiceWorker({ isForce: true }));
 
     fireEvent(window, new Event('load'));
 
-    await waitFor(() => expect(console.log).toBeCalledWith('Service Worker registration failed: ', undefined));
+    expect(await console.log).toBeCalledWith('Service Worker registration failed: ', undefined);
   });
 
   test('Should not register (dev)', async () => {
     navigatorSpy.mockImplementation(() => ({
       serviceWorker: {
-        register: jest.fn(() => Promise.resolve({ scope: 'test' })),
+        register: jest.fn((url: string) => {
+          serviceWorkerUrl = url;
+          return Promise.resolve({ scope: 'test' });
+        }),
       },
     }));
 
@@ -72,14 +75,33 @@ describe('useServiceWorker', () => {
 
     fireEvent(window, new Event('load'));
 
-    await waitFor(() => expect(console.log).not.toBeCalled());
+    expect(await serviceWorkerUrl).toBe(undefined);
+    expect(await console.log).not.toBeCalled();
+  });
+
+  test('Should not register (disable)', async () => {
+    navigatorSpy.mockImplementation(() => ({
+      serviceWorker: {
+        register: jest.fn((url: string) => {
+          serviceWorkerUrl = url;
+          return Promise.resolve({ scope: 'test' });
+        }),
+      },
+    }));
+
+    renderHook(() => useServiceWorker({ isDisable: true, isForce: true }));
+
+    fireEvent(window, new Event('load'));
+
+    expect(serviceWorkerUrl).toBe(undefined);
+    expect(await console.log).not.toBeCalled();
   });
 
   test('Should not register (no serviceWorker)', async () => {
     navigatorSpy.mockImplementation(() => ({}));
 
-    renderHook(() => useServiceWorker(true));
+    renderHook(() => useServiceWorker({ isForce: true }));
 
-    await waitFor(() => expect(console.log).not.toBeCalled());
+    expect(await console.log).not.toBeCalled();
   });
 });
