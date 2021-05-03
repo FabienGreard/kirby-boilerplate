@@ -21,7 +21,9 @@ Start by cloning this repository, then use either `yarn install` or `npm install
 
 ## Getting Started
 
-First, run the development server:
+First look at the `.env` file. (you can start with the default)
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -52,6 +54,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 | bump:major      |                                                standard-version --release-as major --no-verify                                                |                                    v.0.0.0 => v.1.0.0 |
 | apollo:download |                         npx apollo service:download --endpoint=http://localhost:3000/api/graphql graphql-schema.json                          |            download a graphql schema from an endpoint |
 | apollo:generate | npx apollo codegen:generate types --localSchemaFile=graphql-schema.json --target=typescript --tagName=gql --outputFlat --tsFileExtension=d.ts | use for generating typing files from a graphql schema |
+| ts-node         |                                            ts-node --compiler-options '{\"module\":\"CommonJS\"}'                                             |                                    use by prisma:seed |
+| prisma:migrate  |                                                              prisma migrate dev                                                               |                 prisma database schema migration tool |
+| prisma:seed     |                                                       prisma db seed --preview-feature                                                        |                             prisma database seed tool |
+| prisma:generate |                                                                prisma generate                                                                |                                generate prisma client |
 | clear           |                                                             node scripts/clear.js                                                             |                         clear node_modules and \*lock |
 | prepare         |                                                                 husky install                                                                 |       This is needed from husky to set up the project |
 
@@ -61,6 +67,7 @@ This project is build with :
 
 - [NextJs](https://nextjs.org/)
 - [Apollo](https://www.apollographql.com/)
+- [prisma](https://www.prisma.io/)
 - [Tailwindcss](https://tailwindcss.com/)
 - [Typescript](https://www.typescriptlang.org/)
 - [react-intl](https://formatjs.io/)
@@ -109,6 +116,16 @@ Given the [conventionalcommits](https://www.conventionalcommits.org/en/v1.0.0/):
 
 [optional footer(s)]
 ```
+
+## Setting up your own database (e.g. PostgreSQL, MySQL, SQL Server)
+
+If you want to use another database than PostgreSQL, you can adjust the database connection in [`prisma/schema.prisma`](hhttps://github.com/FabienGreard/kirby-boilerplate/tree/main/prisma/schema.prisma) by reconfiguring the datasource block.
+
+Learn more about the different connection configurations in the [docs](https://www.prisma.io/docs/reference/database-reference/connection-urls).
+
+At this point your should be able to execute `yarn prisma:migrate` or `npm run prisma:migrate` to initialise your database with the base schema.
+
+You could also seed your database with `yarn prisma:seed` or `npm run prisma:seed`.
 
 ## Generate typing from graphql schema
 

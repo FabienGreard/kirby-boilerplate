@@ -68,5 +68,8 @@ yarn-error.log*
 # apollo
 graphql-schema.json
 
+# prisma
+prisma/migrations
+
 # lhci
 .lighthouseci

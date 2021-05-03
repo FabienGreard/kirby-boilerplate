@@ -19,6 +19,7 @@
       "components/*": ["components/*"],
       "design-system/*": ["design-system/*"],
       "apollo/*": ["apollo/*"],
+      "prisma/*": ["prisma/*"],
       "types/*": ["types/*"],
       "utils/*": ["utils/*"],
       "langs/*": ["langs/*"],
