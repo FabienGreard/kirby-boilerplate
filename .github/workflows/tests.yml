@@ -50,7 +50,7 @@ jobs:
             ~/.cache/Cypress
           key: ${{ runner.os }}-build-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
+            ${{ runner.os }}-node_modules-
 
       - name: Node14
         uses: actions/setup-node@v2
@@ -88,7 +88,7 @@ jobs:
             ~/.cache/Cypress
           key: ${{ runner.os }}-build-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ hashFiles('**/yarn.lock') }}
+            ${{ runner.os }}-build-
 
       - name: Node14
         uses: actions/setup-node@v2
@@ -123,7 +123,7 @@ jobs:
             ~/.cache/Cypress
           key: ${{ runner.os }}-build-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ hashFiles('**/yarn.lock') }}
+            ${{ runner.os }}-build-
 
       - name: Node14
         uses: actions/setup-node@v2
