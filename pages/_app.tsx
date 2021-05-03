@@ -3,6 +3,8 @@ import { useRouter } from 'next/router';
 import { IntlProvider } from 'react-intl';
 import { ApolloProvider } from '@apollo/client';
 
+import Layout from 'components/Layout';
+
 import useServiceWorker from 'hooks/useServiceWorker';
 import useClient from 'apollo/client';
 
@@ -22,7 +24,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ApolloProvider client={apolloClient}>
       <IntlProvider locale={locale} defaultLocale={defaultLocale} messages={messages}>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </IntlProvider>
     </ApolloProvider>
   );

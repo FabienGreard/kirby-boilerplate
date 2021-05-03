@@ -2,7 +2,7 @@
 
 exports[`Storyshots Example/Button Large 1`] = `
 <button
-  className="uppercase tracking-wider box-border border bg-white text-primary-600 border-primary-600 text-black focus:outline-none focus:text-primary-900 focus:border-primary-900 hover:border-primary-900 hover:text-primary-900 rounded-lg text-lg px-4 py-3 undefined"
+  className="flex items-center uppercase tracking-wider box-border bg-white border border-primary-600 text-primary-600 focus:outline-none focus:text-primary-900 focus:border-primary-900 hover:border-primary-900 hover:text-primary-900 rounded-lg text-lg px-4 py-3 undefined"
   style={
     Object {
       "backgroundColor": undefined,
@@ -10,13 +10,15 @@ exports[`Storyshots Example/Button Large 1`] = `
   }
   type="button"
 >
-  Button
+  <p>
+    Button
+  </p>
 </button>
 `;
 
 exports[`Storyshots Example/Button Primary 1`] = `
 <button
-  className="uppercase tracking-wider box-border bg-primary-600 border border-primary-600 text-white focus:outline-none focus:bg-primary-900 focus:border-primary-900 hover:bg-primary-900 hover:border-primary-900 rounded-md text-md px-3 py-2 undefined"
+  className="flex items-center uppercase tracking-wider box-border bg-primary-600 border border-primary-600 text-white focus:outline-none focus:bg-primary-900 focus:border-primary-900 hover:bg-primary-900 hover:border-primary-900 rounded-md text-md px-3 py-2 undefined"
   style={
     Object {
       "backgroundColor": undefined,
@@ -24,13 +26,15 @@ exports[`Storyshots Example/Button Primary 1`] = `
   }
   type="button"
 >
-  Button
+  <p>
+    Button
+  </p>
 </button>
 `;
 
 exports[`Storyshots Example/Button Secondary 1`] = `
 <button
-  className="uppercase tracking-wider box-border border bg-white text-primary-600 border-primary-600 text-black focus:outline-none focus:text-primary-900 focus:border-primary-900 hover:border-primary-900 hover:text-primary-900 rounded-md text-md px-3 py-2 undefined"
+  className="flex items-center uppercase tracking-wider box-border bg-white border border-primary-600 text-primary-600 focus:outline-none focus:text-primary-900 focus:border-primary-900 hover:border-primary-900 hover:text-primary-900 rounded-md text-md px-3 py-2 undefined"
   style={
     Object {
       "backgroundColor": undefined,
@@ -38,13 +42,15 @@ exports[`Storyshots Example/Button Secondary 1`] = `
   }
   type="button"
 >
-  Button
+  <p>
+    Button
+  </p>
 </button>
 `;
 
 exports[`Storyshots Example/Button Small 1`] = `
 <button
-  className="uppercase tracking-wider box-border border bg-white text-primary-600 border-primary-600 text-black focus:outline-none focus:text-primary-900 focus:border-primary-900 hover:border-primary-900 hover:text-primary-900 rounded-sm text-sm px-2 py-1 undefined"
+  className="flex items-center uppercase tracking-wider box-border bg-white border border-primary-600 text-primary-600 focus:outline-none focus:text-primary-900 focus:border-primary-900 hover:border-primary-900 hover:text-primary-900 rounded-sm text-sm px-2 py-1 undefined"
   style={
     Object {
       "backgroundColor": undefined,
@@ -52,6 +58,8 @@ exports[`Storyshots Example/Button Small 1`] = `
   }
   type="button"
 >
-  Button
+  <p>
+    Button
+  </p>
 </button>
 `;

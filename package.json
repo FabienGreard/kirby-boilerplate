@@ -1,6 +1,6 @@
 {
   "name": "kirby-boilerplate",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "license": "MIT",
   "homepage": "https://github.com/FabienGreard/kirby-boilerplate#readme",
   "author": "Fabien Gréard <grd.fabien@gmail.com> (http://fabiengreard.com/)",
@@ -44,18 +44,23 @@
     "apollo:download": "npx apollo service:download --endpoint=http://localhost:3000/api/graphql graphql-schema.json",
     "apollo:generate": "npx apollo codegen:generate types --localSchemaFile=graphql-schema.json --target=typescript --tagName=gql --outputFlat --tsFileExtension=d.ts",
     "apollo:ts": "node apollo-types.js",
+    "ts-node": "ts-node --compiler-options '{\"module\":\"CommonJS\"}'",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:seed": "prisma db seed --preview-feature",
+    "prisma:generate": "prisma generate",
     "clear": "node scripts/clear.js",
-    "prepare": "husky install"
+    "prepare": "husky install && prisma generate"
   },
   "dependencies": {
     "@apollo/client": "^3.3.16",
     "@next/bundle-analyzer": "^10.2.0",
+    "@prisma/client": "^2.21.2",
     "apollo-server-micro": "^2.24.0",
     "graphql": "^15.5.0",
     "next": "^10.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-intl": "^5.17.2"
+    "react-intl": "^5.17.4"
   },
   "devDependencies": {
     "@babel/core": "^7.14.0",
@@ -91,8 +96,10 @@
     "jest": "^26.6.3",
     "postcss": "^8.2.13",
     "prettier": "^2.2.1",
+    "prisma": "^2.21.2",
     "standard-version": "^9.2.0",
     "tailwindcss": "^2.1.2",
+    "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
   },
   "browserslist": [
