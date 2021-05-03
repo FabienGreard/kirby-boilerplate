@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.4.0 (2021-05-03)
+
+### Features
+
+- prisma ([1961a6b](https://github.com/FabienGreard/kirby-boilerplate/commit/1961a6b5f1b49941ffbde81ea737c8abdd8602f1))
+
 ## 1.3.0 (2021-04-10)
 
 ### Features
