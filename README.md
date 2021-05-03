@@ -137,6 +137,19 @@ With the graphql endpoint running launch `yarn apollo:download` follow by `yarn 
 
 Kirby use [vercel](https://vercel.com/docs) however you can use any other hosting service.
 
+## Roadmap:
+
+(Would love Pull requests that build towards these objectives)
+
+- [ ] Add a CLI installer like cra / cna
+- [ ] Multiple install with opt-out feature e.f without apollo, with monorepo etc...
+  - [ ] Monorepo
+  - [ ] Without server / api (remove apollo)
+  - [ ] More installer ??
+- [ ] Better doc ?
+- [ ] Feature projects build with Kirby
+- [ ] Feature contributors
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
