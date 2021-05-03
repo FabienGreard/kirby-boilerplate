@@ -23,6 +23,10 @@ export interface ButtonProps {
    * Optional className overidel
    */
   className?: string;
+  /**
+   * Optional icon component
+   */
+  icon?: JSX.Element;
 }
 
 /**
@@ -33,12 +37,13 @@ export const Button: React.FC<ButtonProps> = ({
   size = 'medium',
   backgroundColor,
   className,
+  icon = null,
   label,
   ...props
 }) => {
-  const BASE_BUTTON = 'uppercase tracking-wider box-border';
+  const BASE_BUTTON = 'flex items-center uppercase tracking-wider box-border';
   const PRIMARY_BUTTON = `${BASE_BUTTON} bg-primary-600 border border-primary-600 text-white focus:outline-none focus:bg-primary-900 focus:border-primary-900 hover:bg-primary-900 hover:border-primary-900`;
-  const SECONDARY_BUTTON = `${BASE_BUTTON} border bg-white text-primary-600 border-primary-600 text-black focus:outline-none focus:text-primary-900 focus:border-primary-900 hover:border-primary-900 hover:text-primary-900`;
+  const SECONDARY_BUTTON = `${BASE_BUTTON} bg-white border border-primary-600 text-primary-600 focus:outline-none focus:text-primary-900 focus:border-primary-900 hover:border-primary-900 hover:text-primary-900`;
 
   const SIZE_BUTTON = {
     small: 'rounded-sm text-sm px-2 py-1',
@@ -53,7 +58,8 @@ export const Button: React.FC<ButtonProps> = ({
       style={{ backgroundColor }}
       {...props}
     >
-      {label}
+      {icon}
+      <p>{label}</p>
     </button>
   );
 };

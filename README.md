@@ -116,6 +116,10 @@ You may need to look at [apollo-tooling](https://github.com/apollographql/apollo
 
 With the graphql endpoint running launch `yarn apollo:download` follow by `yarn apollo:generate`, this will create under `types` a typing file for each query under `apollo/operations`.
 
+## Hosting
+
+Kirby use [vercel](https://vercel.com/docs) however you can use any other hosting service.
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

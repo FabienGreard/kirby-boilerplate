@@ -1,6 +1,6 @@
 {
   "name": "kirby-boilerplate",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "license": "MIT",
   "homepage": "https://github.com/FabienGreard/kirby-boilerplate#readme",
   "author": "Fabien Gréard <grd.fabien@gmail.com> (http://fabiengreard.com/)",
@@ -55,7 +55,7 @@
     "next": "^10.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-intl": "^5.17.2"
+    "react-intl": "^5.17.4"
   },
   "devDependencies": {
     "@babel/core": "^7.14.0",

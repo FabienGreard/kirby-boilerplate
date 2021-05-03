@@ -5,7 +5,7 @@ const exec = require('./exec');
   console.log('--- CLEAR ---');
   await Promise.all([
     exec(`rm -rf ${join(__dirname, '/../node_modules')}`),
-    exec(`rm -rf ${join(__dirname, '/../*lock.json')}`),
+    exec(`rm -rf ${join(__dirname, '/../*lock*')}`),
   ]);
   console.log('--- DONE ---');
 })();

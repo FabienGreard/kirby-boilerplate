@@ -8,7 +8,7 @@ const customTestRender = (
   ui: ReactElement,
   options?: Omit<RenderOptions & { locale?: string; mocks: MockedResponse[] }, 'queries'>,
 ) => {
-  const { locale = 'en', mocks = [] } = options;
+  const { locale = 'en', mocks = [] } = options || {};
 
   const AllTheProviders = ({ children }: { children: ReactElement }) => {
     return (
