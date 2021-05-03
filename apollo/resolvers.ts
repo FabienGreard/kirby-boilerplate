@@ -1,7 +1,9 @@
+import prisma from 'prisma/index';
+
 export default {
   Query: {
     viewer() {
-      return { id: 1, name: 'Kirby Doe' };
+      return prisma.user.findFirst();
     },
   },
 };
