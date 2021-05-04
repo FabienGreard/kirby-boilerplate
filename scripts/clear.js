@@ -4,8 +4,8 @@ const exec = require('./exec');
 (async () => {
   console.log('--- CLEAR ---');
   await Promise.all([
-    exec(`rm -rf ${join(__dirname, '/../node_modules')}`),
-    exec(`rm -rf ${join(__dirname, '/../*lock*')}`),
+    exec('rm', ['-rf', `${join(__dirname, '/../node_modules')}`], { echo: true }),
+    exec('rmasdf', ['-rf', `${join(__dirname, '/../*lock*')}`], { echo: true }),
   ]);
   console.log('--- DONE ---');
 })();

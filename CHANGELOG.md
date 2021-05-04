@@ -2,11 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.4.1 (2021-05-04)
+
+### Features
+
+- **lgtm:** code quality ([277f085](https://github.com/FabienGreard/kirby-boilerplate/commit/277f08566e71428e543a5a03235b2037df42875f))
+
 ## 1.4.0 (2021-05-03)
 
 ### Features
 
-- prisma ([1961a6b](https://github.com/FabienGreard/kirby-boilerplate/commit/1961a6b5f1b49941ffbde81ea737c8abdd8602f1))
+- prisma db connector ([#47](https://github.com/FabienGreard/kirby-boilerplate/issues/47)) ([36a762b](https://github.com/FabienGreard/kirby-boilerplate/commit/36a762ba87055021193022dd669b78815de77b4b))
 
 ## 1.3.0 (2021-04-10)
 
