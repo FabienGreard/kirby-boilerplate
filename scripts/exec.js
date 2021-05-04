@@ -1,11 +1,9 @@
-const { spawn, exec } = require('child_process');
-const os = require('os');
+const { spawn } = require('child_process');
 
-module.exports = (command, { capture = false, echo = false } = {}) => {
-  if (echo) console.log(command);
+module.exports = (command, args, { capture = false, echo = false } = {}) => {
+  if (echo) console.log(command, ...args);
 
-  const childProcess =
-    os.platform() === 'win32' ? exec(command) : spawn('bash', ['-c', command], { stdio: capture ? 'pipe' : 'inherit' });
+  const childProcess = spawn(command, args, { stdio: capture ? 'pipe' : 'inherit' });
 
   return new Promise((resolve, reject) => {
     let stdout = '';
@@ -15,7 +13,7 @@ module.exports = (command, { capture = false, echo = false } = {}) => {
         stdout += data;
       });
 
-    childProcess.on('error', error => reject(new Error({ code: 1, error })));
+    childProcess.on('error', error => reject(new Error(error)));
 
     childProcess.on('close', code =>
       code > 0

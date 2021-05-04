@@ -87,7 +87,6 @@ self.addEventListener('fetch', event => {
 });
 
 async function staleWhileRevalidate(event) {
-  let promise = null;
   let cachedResponse = await getCache(event.request.clone());
   let fetchPromise = fetch(event.request.clone())
     .then(response => {
@@ -115,7 +114,6 @@ async function serializeResponse(response) {
 }
 
 async function setCache(request, response) {
-  var key, data;
   let body = await request.json();
   let id = CryptoJS.MD5(body.query).toString();
 
