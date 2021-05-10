@@ -7,6 +7,8 @@
 
 This is an opinionated boilerplate with rocking tools for front-end development.
 
+**⚠️ DISCLAIMER: This project as nothing to do with [Kirby CMS](https://getkirby.com/) !**
+
 ## Values
 
 This boilerplate aims to provide a way to start a new project with everything from testing to ci/cd out of the box.
