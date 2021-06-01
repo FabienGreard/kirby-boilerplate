@@ -26,6 +26,6 @@
       "hooks/*": ["hooks/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "setupTests.js"],
-  "exclude": ["node_modules", "cypress/**/*.spec.ts", "scripts"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "setupTests.js", "create-kirby-app/index.js"],
+  "exclude": ["node_modules", "cypress/**/*.spec.ts", "scripts", "create-kirby-app"]
 }

@@ -1,0 +1,38 @@
+{
+  "name": "create-kirby-app",
+  "version": "0.0.1",
+  "license": "MIT",
+  "homepage": "https://github.com/FabienGreard/kirby-boilerplate#readme",
+  "author": "Fabien Gréard <grd.fabien@gmail.com> (http://fabiengreard.com/)",
+  "description": "Create kirby apps with one command.",
+  "keywords": [
+    "cli",
+    "kirby"
+  ],
+  "bin": {
+    "create-kirby-app": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "parcel watch index.ts",
+    "prerelease": "rimraf ./dist/",
+    "release": "parcel build index.ts",
+    "prepublish": "yarn release"
+  },
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "meow": "^10.0.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0-beta.2",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.3.2"
+  },
+  "targets": {
+    "default": {
+      "context": "node"
+    }
+  }
+}
