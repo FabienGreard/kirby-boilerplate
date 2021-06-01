@@ -20,7 +20,7 @@
     {
       "files": ["*.ts", "*.tsx"],
       "parserOptions": {
-        "project": ["./tsconfig.json", "./cypress/tsconfig.json"]
+        "project": ["./tsconfig.json", "./cypress/tsconfig.json", "./create-kirby-app/tsconfig.json"]
       }
     }
   ],
