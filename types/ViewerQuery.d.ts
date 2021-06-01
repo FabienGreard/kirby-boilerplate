@@ -8,7 +8,7 @@
 // ====================================================
 
 export interface ViewerQuery_viewer {
-  __typename: "User";
+  __typename: 'User';
   id: string;
   name: string;
 }

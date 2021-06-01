@@ -1,4 +1,5 @@
 module.exports = {
+  testEnvironment: 'jsdom',
   moduleNameMapper: {
     '^components(.*)$': '<rootDir>/components/$1',
     '^design-system(.*)$': '<rootDir>/design-system$1',

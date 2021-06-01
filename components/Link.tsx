@@ -6,7 +6,7 @@ export const withLink = <T extends Record<never, unknown>>(Component: ComponentT
     <Link href={href} locale={locale} passHref>
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <a className="outline-none">
-        <Component {...((props as unknown) as T)} />
+        <Component {...(props as unknown as T)} />
       </a>
     </Link>
   );
