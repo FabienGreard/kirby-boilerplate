@@ -1,5 +1,3 @@
-/* eslint-disable global-require */
-/* eslint-disable @typescript-eslint/no-var-requires */
 import { ApolloClient, InMemoryCache, NormalizedCacheObject } from '@apollo/client';
 import { useMemo } from 'react';
 

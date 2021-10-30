@@ -6,7 +6,7 @@ import ReactSVG from 'components/Icons/React';
 import { withLink } from 'components/Link';
 
 import { initializeApollo } from 'apollo/client';
-import { ViewerQuery } from 'apollo/operations/viewer';
+import ViewerQuery from 'apollo/operations/viewer';
 import { ViewerQuery as ViewerQueryType } from 'types/ViewerQuery';
 
 const ButtonWithLink = withLink(Button);

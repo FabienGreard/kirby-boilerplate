@@ -5,7 +5,7 @@ import Button from 'design-system/Button';
 import ReactSVG from 'components/Icons/React';
 import { withLink } from 'components/Link';
 
-import { ViewerQuery } from 'apollo/operations/viewer';
+import ViewerQuery from 'apollo/operations/viewer';
 import { ViewerQuery as ViewerQueryType } from 'types/ViewerQuery';
 
 import useClientQuery from 'hooks/useClientQuery';

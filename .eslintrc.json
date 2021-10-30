@@ -1,41 +1,6 @@
 {
-  "extends": ["next/core-web-vitals", "prettier"],
+  "extends": ["next/core-web-vitals", "prettier", "plugin:@next/next/recommended"],
   "rules": {
-    "import/extensions": [
-      0,
-      "ignorePackages",
-      {
-        "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
-      }
-    ],
-    "import/no-extraneous-dependencies": [
-      2,
-      {
-        "devDependencies": true
-      }
-    ],
-    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
-    "react/require-default-props": 0,
-    "react/prop-types": 0,
-    "react/react-in-jsx-scope": 0,
-    "react/jsx-props-no-spreading": [1, { "html": "ignore", "exceptions": ["Component"] }],
-    "arrow-parens": 0,
-    "no-undef": 0,
-    "no-console": 1,
-    "no-plusplus": [
-      2,
-      {
-        "allowForLoopAfterthoughts": true
-      }
-    ],
-    "@typescript-eslint/no-shadow": 0,
-    "import/no-anonymous-default-export": 0,
-    "no-shadow": 0,
-    "react-hooks/rules-of-hooks": 2,
-    "react-hooks/exhaustive-deps": 1,
-    "@typescript-eslint/explicit-module-boundary-types": 0
+    "import/no-anonymous-default-export": 0
   }
 }

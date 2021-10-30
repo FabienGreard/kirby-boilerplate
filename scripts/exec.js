@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const { spawn } = require('child_process');
 
 module.exports = (command, args, { capture = false, echo = false } = {}) => {
