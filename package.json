@@ -33,7 +33,7 @@
     "build": "ANALYZE=true next build",
     "start": "next start",
     "format": "prettier --write .",
-    "lint": "eslint --fix .",
+    "lint": "next lint --fix .",
     "test": "jest --silent",
     "coverage": "jest --coverage --silent",
     "e2e": "cypress run --headless",
@@ -42,16 +42,14 @@
     "bump:minor": "standard-version --release-as minor --no-verify",
     "bump:major": "standard-version --release-as major --no-verify",
     "codegen": "npx apollo client:codegen --target typescript",
-    "ts-node": "ts-node --compiler-options '{\"module\":\"CommonJS\"}'",
     "prisma:migrate": "prisma migrate dev",
-    "prisma:seed": "prisma db seed --preview-feature",
+    "prisma:seed": "prisma db seed",
     "prisma:generate": "prisma generate",
     "clear": "node scripts/clear.js",
     "prepare": "husky install && prisma generate"
   },
   "dependencies": {
     "@apollo/client": "^3.4.16",
-    "@graphql-tools/schema": "^8.3.1",
     "@next/bundle-analyzer": "^12.0.1",
     "@prisma/client": "^3.3.0",
     "apollo-server-micro": "^3.4.0",
@@ -67,6 +65,7 @@
     "@babel/core": "^7.16.0",
     "@commitlint/cli": "^13.2.1",
     "@commitlint/config-conventional": "^13.2.0",
+    "@next/eslint-plugin-next": "^12.0.1",
     "@storybook/addon-essentials": "^6.3.12",
     "@storybook/addon-postcss": "^2.0.0",
     "@storybook/addon-storyshots": "^6.3.12",
@@ -79,21 +78,13 @@
     "@types/micro-cors": "^0.1.2",
     "@types/node": "^16.11.6",
     "@types/react": "^17.0.33",
-    "@typescript-eslint/eslint-plugin": "^5.2.0",
-    "@typescript-eslint/parser": "^5.2.0",
     "apollo": "^2.33.7",
     "autoprefixer": "^10.4.0",
     "babel-loader": "^8.2.3",
     "cypress": "^8.7.0",
-    "eslint": "^8.1.0",
-    "eslint-config-airbnb": "^18.2.1",
+    "eslint": "<8.0.0",
+    "eslint-config-next": "12.0.1",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-import-resolver-typescript": "^2.5.0",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.26.1",
-    "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^7.0.4",
     "isomorphic-fetch": "^3.0.0",
     "jest": "^27.3.1",
@@ -110,5 +101,8 @@
     "not ie 11",
     "not dead",
     "not op_mini all"
-  ]
+  ],
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+  }
 }

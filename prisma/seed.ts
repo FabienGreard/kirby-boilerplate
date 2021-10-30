@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
-import { PrismaClient, Prisma } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-const users: Prisma.UserCreateInput[] = [
+const users = [
   {
     name: 'Kirby Doe',
   },

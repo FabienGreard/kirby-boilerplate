@@ -37,30 +37,29 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Commands
 
-| Commands        |                          Info                          |                                                                Description |
-| --------------- | :----------------------------------------------------: | -------------------------------------------------------------------------: |
-| dev             |                        next dev                        |                                                     Launch app in dev mode |
-| dev:test        |                      jest --watch                      |                                                                Launch test |
-| dev:coverage    |                jest --coverage --watch                 |                                              Generate a coverage from test |
-| dev:e2e         |                      cypress open                      |                                                            Launch e2e test |
-| build           |                       next build                       |                                           Build the app for production use |
-| start           |                       next start                       |                                                      Launch app from build |
-| format          |                   prettier --write .                   |                                                             Format project |
-| lint            |                     eslint --fix .                     |                                                               Lint project |
-| test            |                     jest --silent                      |                                                                Launch test |
-| coverage        |                jest --coverage --silent                |                                              Generate a coverage from test |
-| e2e             |                 cypress run --headless                 |                                                            Launch e2e test |
-| storybook       |                start-storybook -p 6006                 |                                           Launch storybook (design-system) |
-| bump:patch      |    standard-version --release-as patch --no-verify     |                                                         v.0.0.0 => v.0.0.1 |
-| bump:minor      |    standard-version --release-as minor --no-verify     |                                                         v.0.0.0 => v.0.1.0 |
-| bump:major      |    standard-version --release-as major --no-verify     |                                                         v.0.0.0 => v.1.0.0 |
-| codegen         |     npx apollo client:codegen --target typescript      |                      use for generating typing files from a graphql schema |
-| ts-node         | ts-node --compiler-options '{\"module\":\"CommonJS\"}' |                                                         use by prisma:seed |
-| prisma:migrate  |                   prisma migrate dev                   |                                      prisma database schema migration tool |
-| prisma:seed     |            prisma db seed --preview-feature            |                                                  prisma database seed tool |
-| prisma:generate |                    prisma generate                     |                                                     generate prisma client |
-| clear           |                 node scripts/clear.js                  |                                              clear node_modules and \*lock |
-| prepare         |            husky install && prisma:generate            | This is needed from husky to set up the project and generate prisma client |
+| Commands        |                      Info                       |                                                                Description |
+| --------------- | :---------------------------------------------: | -------------------------------------------------------------------------: |
+| dev             |                    next dev                     |                                                     Launch app in dev mode |
+| dev:test        |                  jest --watch                   |                                                                Launch test |
+| dev:coverage    |             jest --coverage --watch             |                                              Generate a coverage from test |
+| dev:e2e         |                  cypress open                   |                                                            Launch e2e test |
+| build           |                   next build                    |                                           Build the app for production use |
+| start           |                   next start                    |                                                      Launch app from build |
+| format          |               prettier --write .                |                                                             Format project |
+| lint            |                 eslint --fix .                  |                                                               Lint project |
+| test            |                  jest --silent                  |                                                                Launch test |
+| coverage        |            jest --coverage --silent             |                                              Generate a coverage from test |
+| e2e             |             cypress run --headless              |                                                            Launch e2e test |
+| storybook       |             start-storybook -p 6006             |                                           Launch storybook (design-system) |
+| bump:patch      | standard-version --release-as patch --no-verify |                                                         v.0.0.0 => v.0.0.1 |
+| bump:minor      | standard-version --release-as minor --no-verify |                                                         v.0.0.0 => v.0.1.0 |
+| bump:major      | standard-version --release-as major --no-verify |                                                         v.0.0.0 => v.1.0.0 |
+| codegen         |  npx apollo client:codegen --target typescript  |                      use for generating typing files from a graphql schema |
+| prisma:migrate  |               prisma migrate dev                |                                      prisma database schema migration tool |
+| prisma:seed     |        prisma db seed --preview-feature         |                                                  prisma database seed tool |
+| prisma:generate |                 prisma generate                 |                                                     generate prisma client |
+| clear           |              node scripts/clear.js              |                                              clear node_modules and \*lock |
+| prepare         |        husky install && prisma:generate         | This is needed from husky to set up the project and generate prisma client |
 
 ## Acknowledgement
 
@@ -162,4 +161,4 @@ Please make sure to update tests as appropriate.
 [MIT](https://choosealicense.com/licenses/mit/)
 
 yarn add @apollo/client @next/bundle-analyzer @prisma/client apollo-server-micro graphql next react react-dom react-intl
-yarn add -D @babel/core @commitlint/cli @commitlint/config-conventional @storybook/addon-essentials @storybook/addon-postcss @storybook/addon-storyshots @storybook/react @testing-library/cypress @testing-library/jest-dom @testing-library/react @testing-library/react-hooks @types/jest @types/node @types/react @typescript-eslint/eslint-plugin @typescript-eslint/parser autoprefixer babel-loader cypress eslint eslint-config-airbnb eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks husky isomorphic-fetch jest postcss prettier prisma standard-version tailwindcss ts-node typescript 
+yarn add -D @babel/core @commitlint/cli @commitlint/config-conventional @storybook/addon-essentials @storybook/addon-postcss @storybook/addon-storyshots @storybook/react @testing-library/cypress @testing-library/jest-dom @testing-library/react @testing-library/react-hooks @types/jest @types/node @types/react @typescript-eslint/eslint-plugin @typescript-eslint/parser autoprefixer babel-loader cypress eslint eslint-config-airbnb eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks husky isomorphic-fetch jest postcss prettier prisma standard-version tailwindcss ts-node typescript

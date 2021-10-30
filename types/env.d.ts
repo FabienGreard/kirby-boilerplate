@@ -4,4 +4,5 @@ declare namespace NodeJS {
     DATABASE_URL: string;
     GRAPHQL_ENDPOINT: string;
   }
+  type Global = NodeJS.Global;
 }

@@ -6,17 +6,10 @@ import { useMemo } from 'react';
 let apolloClient: ApolloClient<NormalizedCacheObject>;
 
 function createIsomorphLink() {
-  if (typeof window === 'undefined') {
-    const { SchemaLink } = require('@apollo/client/link/schema');
-    const schema = require('apollo/schema');
-
-    return new SchemaLink({ schema: schema.default });
-  }
-
   const { HttpLink } = require('@apollo/client/link/http');
 
   return new HttpLink({
-    uri: '/api/graphql',
+    uri: process.env.GRAPHQL_ENDPOINT,
     credentials: 'same-origin',
   });
 }
