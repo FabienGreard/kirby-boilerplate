@@ -1,6 +1,6 @@
 import NextHead from 'next/head';
 
-import { SEO, HOST } from 'utils/constant';
+import { SEO, HOST } from 'utils/constants';
 
 interface Props {
   title?: string;

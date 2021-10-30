@@ -1,11 +1,11 @@
 import { render } from 'utils/customTestRender';
 
 import useClientQuery from 'hooks/useClientQuery';
-import { ViewerQuery } from 'apollo/queries/viewer';
-import { ViewerQuery as ViewerQueryType } from 'types/ViewerQuery';
+import VIEWER_QUERY from 'apollo/queries/viewer';
+import { Query } from 'types/schema';
 
 const Viewer = () => {
-  const { data } = useClientQuery<ViewerQueryType>(ViewerQuery);
+  const { data } = useClientQuery<Query>(VIEWER_QUERY);
 
   return <h1>{data?.viewer?.name}</h1>;
 };
@@ -14,7 +14,7 @@ describe('useClientQuery', () => {
   test('Should return a response data from query after mounted', async () => {
     const viewerMock = {
       request: {
-        query: ViewerQuery,
+        query: VIEWER_QUERY,
       },
       result: {
         data: {

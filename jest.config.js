@@ -26,6 +26,7 @@ module.exports = {
     'design-system/**/*.(ts|tsx)',
     'utils/**/*.(ts|tsx)',
     '!utils/customTestRender.(ts|tsx)',
+    '!utils/constants.(ts|tsx)',
   ],
   coverageThreshold: {
     global: {
