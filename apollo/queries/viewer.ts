@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-export const ViewerQuery = gql`
+export default gql`
   query ViewerQuery {
     viewer {
       id
@@ -8,5 +8,3 @@ export const ViewerQuery = gql`
     }
   }
 `;
-
-export default null;

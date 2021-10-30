@@ -100,7 +100,7 @@ jobs:
         run: yarn install
 
       - name: Install Lhci
-        run: npm install -g @lhci/cli@0.7.x
+        run: npm install -g @lhci/cli@0.8.x
 
       - name: Lhci
         run: lhci autorun

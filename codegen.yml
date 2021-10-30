@@ -1,0 +1,6 @@
+schema:
+  - ${GRAPHQL_ENDPOINT}
+generates:
+  ./types/schema.ts:
+    plugins:
+      - typescript

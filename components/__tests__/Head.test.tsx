@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import Head from 'components/Head';
 
-import { SEO } from 'utils/constant';
+import { SEO } from 'utils/constants';
 
 describe('Header', () => {
   test('Should had default values', () => {

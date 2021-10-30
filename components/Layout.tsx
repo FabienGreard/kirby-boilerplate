@@ -6,7 +6,7 @@ import { withLink } from 'components/Link';
 
 import Button from 'design-system/Button';
 
-import { VERSION, GITHUB_URL } from 'utils/constant';
+import { VERSION, GITHUB_URL } from 'utils/constants';
 
 import * as langs from 'langs';
 

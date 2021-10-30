@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { useEffect } from 'react';
-import { IS_RUNNING_DEV } from 'utils/constant';
+import { IS_RUNNING_DEV } from 'utils/constants';
 
 export interface Props {
   isForce?: boolean;

@@ -4,7 +4,7 @@ import { fireEvent } from '@testing-library/react';
 
 import useServiceWorker from 'hooks/useServiceWorker';
 
-jest.mock('utils/constant', () => {
+jest.mock('utils/constants', () => {
   return {
     __esModule: true,
     default: null,

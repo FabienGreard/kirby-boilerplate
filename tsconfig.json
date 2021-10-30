@@ -2,8 +2,14 @@
   "compilerOptions": {
     "baseUrl": ".",
     "target": "es6",
-    "types": ["jest"],
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "types": [
+      "jest"
+    ],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -16,16 +22,42 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "paths": {
-      "components/*": ["components/*"],
-      "design-system/*": ["design-system/*"],
-      "apollo/*": ["apollo/*"],
-      "prisma/*": ["prisma/*"],
-      "types/*": ["types/*"],
-      "utils/*": ["utils/*"],
-      "langs/*": ["langs/*"],
-      "hooks/*": ["hooks/*"]
-    }
+      "components/*": [
+        "components/*"
+      ],
+      "design-system/*": [
+        "design-system/*"
+      ],
+      "apollo/*": [
+        "apollo/*"
+      ],
+      "prisma/*": [
+        "prisma/*"
+      ],
+      "types/*": [
+        "types/*"
+      ],
+      "utils/*": [
+        "utils/*"
+      ],
+      "langs/*": [
+        "langs/*"
+      ],
+      "hooks/*": [
+        "hooks/*"
+      ]
+    },
+    "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "setupTests.js"],
-  "exclude": ["node_modules", "cypress/**/*.spec.ts", "scripts"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "setupTests.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "cypress/**/*.spec.ts",
+    "scripts"
+  ]
 }

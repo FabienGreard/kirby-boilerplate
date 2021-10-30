@@ -6,8 +6,8 @@ import ReactSVG from 'components/Icons/React';
 import { withLink } from 'components/Link';
 
 import { initializeApollo } from 'apollo/client';
-import { ViewerQuery } from 'apollo/operations/viewer';
-import { ViewerQuery as ViewerQueryType } from 'types/ViewerQuery';
+import VIEWER_QUERY from 'apollo/queries/viewer';
+import { Query } from 'types/schema';
 
 const ButtonWithLink = withLink(Button);
 
@@ -16,8 +16,8 @@ export async function getStaticProps() {
 
   const {
     data: { viewer },
-  } = await client.query<ViewerQueryType>({
-    query: ViewerQuery,
+  } = await client.query<Query>({
+    query: VIEWER_QUERY,
   });
 
   return {
