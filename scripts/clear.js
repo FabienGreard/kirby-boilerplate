@@ -7,6 +7,7 @@ const exec = require('./exec');
   await Promise.all([
     exec('rm', ['-rf', `${join(__dirname, '/../node_modules')}`], { echo: true }),
     exec('rm', ['-rf', `${join(__dirname, '/../*lock*')}`], { echo: true }),
+    exec('rm', ['-rf', `${join(__dirname, '/.next')}`], { echo: true }),
   ]);
   console.log('--- DONE ---');
 })();

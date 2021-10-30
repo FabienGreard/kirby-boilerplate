@@ -5,8 +5,7 @@ import Button from 'design-system/Button';
 import ReactSVG from 'components/Icons/React';
 import { withLink } from 'components/Link';
 
-import ViewerQuery from 'apollo/operations/viewer';
-import { ViewerQuery as ViewerQueryType } from 'types/ViewerQuery';
+import VIEWER_QUERY from 'apollo/queries/viewer';
 
 import useClientQuery from 'hooks/useClientQuery';
 
@@ -14,7 +13,7 @@ const ButtonWithLink = withLink(Button);
 
 export default function CSR() {
   const { formatMessage } = useIntl();
-  const { data } = useClientQuery<ViewerQueryType>(ViewerQuery);
+  const { data } = useClientQuery(VIEWER_QUERY);
 
   return (
     <section className="flex flex-col justify-center items-center h-full space-y-10">

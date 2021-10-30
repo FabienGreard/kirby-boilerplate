@@ -1,7 +1,7 @@
 import { render } from 'utils/customTestRender';
 
 import useClientQuery from 'hooks/useClientQuery';
-import { ViewerQuery } from 'apollo/operations/viewer';
+import { ViewerQuery } from 'apollo/queries/viewer';
 import { ViewerQuery as ViewerQueryType } from 'types/ViewerQuery';
 
 const Viewer = () => {
