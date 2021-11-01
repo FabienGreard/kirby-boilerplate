@@ -18,4 +18,4 @@ export const IS_RUNNING_DEV = RUNNING_ENV === 'development';
 export const HOST = process.env.NEXT_PUBLIC_VERCEL_URL
   ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
   : process.env.NEXT_PUBLIC_HOST;
-export const GRAPHQL_ENDPOINT = process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT;
+export const GRAPHQL_ENDPOINT = `${HOST}${process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT}`;

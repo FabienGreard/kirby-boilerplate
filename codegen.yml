@@ -1,8 +1,8 @@
 overwrite: true
 schema:
-  - ${GRAPHQL_ENDPOINT}
+  - http://${HOSTNAME}:${PORT}${GRAPHQL_ENDPOINT}
 documents:
-  - './graphql/**/*.ts'
+  - './operations/**/*.ts'
 generates:
   ./types/schema.ts:
     plugins:

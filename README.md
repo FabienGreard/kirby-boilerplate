@@ -147,6 +147,8 @@ Kirby use [vercel](https://vercel.com/docs) however you can use any other hostin
 
 In order to not populate `.env` and still being able to deploy we are using [vercel-env](https://vercel.com/docs/concepts/projects/environment-variables).
 
+You need to add both `NEXT_PUBLIC_GRAPHQL_ENDPOINT` and `DATABASE_URL` to have a sucessfull deployment on vercel.
+
 ## Roadmap:
 
 (Would love Pull requests that build towards these objectives)
