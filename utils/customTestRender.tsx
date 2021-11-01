@@ -1,8 +1,9 @@
 import { ReactElement } from 'react';
 import { render, RenderOptions } from '@testing-library/react';
 import { MockedProvider, MockedResponse } from '@apollo/client/testing';
-import { IntlProvider } from 'react-intl';
-import * as langs from 'langs';
+import { RawIntlProvider } from 'react-intl';
+
+import { useCreateIntl } from './Intl';
 
 const customTestRender = (
   ui: ReactElement,
@@ -11,11 +12,11 @@ const customTestRender = (
   const { locale = 'en', mocks = [] } = options || {};
 
   const AllTheProviders = ({ children }: { children: ReactElement }) => {
+    const intl = useCreateIntl({ locale, defaultLocale: 'en' });
+
     return (
       <MockedProvider mocks={mocks}>
-        <IntlProvider locale={locale} messages={langs[locale].default} defaultLocale="en">
-          {children}
-        </IntlProvider>
+        <RawIntlProvider value={intl}>{children}</RawIntlProvider>
       </MockedProvider>
     );
   };

@@ -11,20 +11,20 @@ declare const global: CustomNodeJsGlobal;
 
 const globalIntlCache = createIntlCache();
 
-let intl =
-  global.intl ?? createIntl({ locale: 'en', defaultLocale: 'en', messages: locales['en'].default }, globalIntlCache);
+export const useCreateIntl = ({ locale, defaultLocale }: IntlConfig) =>
+  useMemo(() => {
+    global.intl = createIntl({ locale, defaultLocale, messages: locales[locale].default }, globalIntlCache);
 
-global.intl = intl;
-
-export const useIntl = ({ locale, defaultLocale }: IntlConfig) => {
-  return useMemo(() => {
-    intl = createIntl({ locale, defaultLocale, messages: locales[locale].default }, globalIntlCache);
-    global.intl = intl;
-
-    return intl;
+    return global.intl;
   }, [locale, defaultLocale]);
+
+export const getIntl = () => {
+  const intl =
+    global.intl ?? createIntl({ locale: 'en', defaultLocale: 'en', messages: locales['en'].default }, globalIntlCache);
+
+  global.intl = intl;
+
+  return intl;
 };
 
-export default function getIntl() {
-  return intl;
-}
+export default getIntl;

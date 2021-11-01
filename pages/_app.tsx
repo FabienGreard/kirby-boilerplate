@@ -7,7 +7,7 @@ import Layout from 'components/Layout';
 
 import useServiceWorker from 'hooks/useServiceWorker';
 import useClient from 'apollo/client';
-import { useIntl } from 'utils/Intl';
+import { useCreateIntl } from 'utils/Intl';
 
 import 'tailwindcss/tailwind.css';
 
@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const { locale, defaultLocale } = router;
 
-  const intl = useIntl({ locale, defaultLocale });
+  const intl = useCreateIntl({ locale, defaultLocale });
 
   const apolloClient = useClient(pageProps.initialApolloState);
 
