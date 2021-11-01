@@ -1,4 +1,5 @@
 import { useIntl } from 'react-intl';
+import { useRouter } from 'next/router';
 
 import Head from 'components/Head';
 import GithubSVG from 'components/Icons/Github';
@@ -32,11 +33,12 @@ const Header = () => {
 
 const Footer = () => {
   const { formatDate } = useIntl();
+  const { route } = useRouter();
 
   const Langs = () => (
     <div className="flex justify-center space-x-1">
       {Object.keys(langs).map(lang => (
-        <ButtonWithLink key={lang} locale={lang} href="/" label={lang} size="small" />
+        <ButtonWithLink key={lang} locale={lang} href={route} label={lang} size="small" />
       ))}
     </div>
   );
