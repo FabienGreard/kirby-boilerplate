@@ -82,7 +82,7 @@ jobs:
       - name: Typescript
         run: yarn tsc
   build:
-    needs: coverage
+    needs: [coverage, tsc, lint]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
