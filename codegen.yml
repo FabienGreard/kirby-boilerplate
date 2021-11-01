@@ -1,6 +1,13 @@
+overwrite: true
 schema:
   - ${GRAPHQL_ENDPOINT}
+documents:
+  - './graphql/**/*.ts'
 generates:
   ./types/schema.ts:
     plugins:
       - typescript
+      - typescript-operations
+      - typescript-react-query
+    config:
+      fetcher: graphql-request

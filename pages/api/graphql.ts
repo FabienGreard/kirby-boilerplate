@@ -3,7 +3,7 @@ import Cors from 'micro-cors';
 
 import schema from 'apollo/schema';
 
-const apolloServer = new ApolloServer({ schema });
+const apolloServer = new ApolloServer(schema);
 
 export const config = {
   api: {

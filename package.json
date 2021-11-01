@@ -9,6 +9,8 @@
     "boilerplate",
     "typescript",
     "react",
+    "react-query",
+    "graphql-request",
     "react-intl",
     "jest",
     "storybook",
@@ -51,18 +53,18 @@
     "prepare": "husky install && prisma generate"
   },
   "dependencies": {
-    "@apollo/client": "^3.4.16",
-    "@graphql-tools/schema": "^8.3.1",
     "@next/bundle-analyzer": "^12.0.1",
     "@prisma/client": "^3.3.0",
     "apollo-server-micro": "^3.4.0",
-    "graphql": "^15.7.2",
+    "graphql": "^16.0.0",
+    "graphql-request": "^3.6.1",
     "micro": "^9.3.4",
     "micro-cors": "^0.1.1",
     "next": "^12.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-intl": "^5.21.0"
+    "react-intl": "^5.21.0",
+    "react-query": "^3.31.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
@@ -70,6 +72,8 @@
     "@commitlint/config-conventional": "^13.2.0",
     "@graphql-codegen/cli": "^2.2.2",
     "@graphql-codegen/typescript": "^2.3.0",
+    "@graphql-codegen/typescript-operations": "^2.2.0",
+    "@graphql-codegen/typescript-react-query": "^3.1.0",
     "@next/eslint-plugin-next": "^12.0.1",
     "@storybook/addon-essentials": "^6.3.12",
     "@storybook/addon-postcss": "^2.0.0",
