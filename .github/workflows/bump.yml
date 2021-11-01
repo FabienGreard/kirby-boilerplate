@@ -8,8 +8,7 @@ jobs:
   bump:
     runs-on: ubuntu-latest
     steps:
-      - run: git add -A
-      - run: git diff-index --quiet HEAD || git commit -m "$CURRENT_VERSION"
+      - run: yarn bump:patch
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
