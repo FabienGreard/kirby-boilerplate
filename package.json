@@ -26,6 +26,7 @@
     "github-actions"
   ],
   "scripts": {
+    "bootstrap": "node scripts/bootstrap.js",
     "dev": "next dev",
     "dev:test": "jest --watch",
     "dev:coverage": "jest --coverage --watch",

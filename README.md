@@ -21,9 +21,13 @@ You should, with this boilerplate only focus on coding rocking react components!
 
 Start by cloning this repository, then use either `yarn install` or `npm install` to download the dependencies.
 
+## Quick start
+
+Want an easy way yo start the project with everything setup ? launch `yarn bootstrap` or `npm run bootstrap`
+
 ## Getting Started
 
-First look at the `.env` file. (you can start with the default)
+First look at the `.env.example` file. (you can start with the default) by copying it into `.env`.
 
 Then, run the development server:
 
@@ -39,6 +43,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 | Commands        |                      Info                       |                                                                Description |
 | --------------- | :---------------------------------------------: | -------------------------------------------------------------------------: |
+| bootstrap       |            node scripts/bootstrap.js            |                                                  run and setup the project |
 | dev             |                    next dev                     |                                                     Launch app in dev mode |
 | dev:test        |                  jest --watch                   |                                                                Launch test |
 | dev:coverage    |             jest --coverage --watch             |                                              Generate a coverage from test |
@@ -127,11 +132,13 @@ At this point your should be able to execute `yarn prisma:migrate` or `npm run p
 
 You could also seed your database with `yarn prisma:seed` or `npm run prisma:seed`.
 
+:warning: by default you wont have the access for doing it, use your own database.
+
 ## Generate typing from graphql schema
 
 You may need to look at [apollo-tooling](https://github.com/apollographql/apollo-tooling)
 
-With the graphql endpoint running launch `yarn codegen`, this will create under `types` a typing file for each query under `apollo/operations`.
+With the graphql endpoint running launch `yarn codegen`, this will create a typing file `schema.ts` under `types`.
 
 ## Hosting
 
@@ -146,6 +153,7 @@ Kirby use [vercel](https://vercel.com/docs) however you can use any other hostin
   - [ ] Monorepo
   - [ ] Without server / api (remove apollo)
   - [ ] More installer ??
+- [ ] improve changelog generation
 - [ ] Better doc ?
 - [ ] Feature projects build with Kirby
 - [ ] Feature contributors
