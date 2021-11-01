@@ -4,6 +4,7 @@ module.exports = {
     '^components(.*)$': '<rootDir>/components/$1',
     '^design-system(.*)$': '<rootDir>/design-system$1',
     '^apollo(.*)$': '<rootDir>/apollo$1',
+    '^operations(.*)$': '<rootDir>/operations$1',
     '^types(.*)$': '<rootDir>/types$1',
     '^pages(.*)$': '<rootDir>/pages$1',
     '^utils(.*)$': '<rootDir>/utils$1',
@@ -20,14 +21,7 @@ module.exports = {
       },
     },
   },
-  collectCoverageFrom: [
-    'hooks/**/*.(ts|tsx)',
-    'components/**/*.(ts|tsx)',
-    'design-system/**/*.(ts|tsx)',
-    'utils/**/*.(ts|tsx)',
-    '!utils/customTestRender.(ts|tsx)',
-    '!utils/constants.(ts|tsx)',
-  ],
+  collectCoverageFrom: ['hooks/**/*.(ts|tsx)', 'components/**/*.(ts|tsx)', 'design-system/**/*.(ts|tsx)'],
   coverageThreshold: {
     global: {
       branches: 80,

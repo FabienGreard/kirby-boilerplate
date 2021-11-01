@@ -1,33 +1,37 @@
+import { useState } from 'react';
+
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
-import { IntlProvider } from 'react-intl';
-import { ApolloProvider } from '@apollo/client';
+import { RawIntlProvider } from 'react-intl';
+import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
 
 import Layout from 'components/Layout';
 
 import useServiceWorker from 'hooks/useServiceWorker';
-import useClient from 'apollo/client';
 
-import * as locales from 'langs';
+import { useCreateIntl } from 'utils/Intl';
 
 import 'tailwindcss/tailwind.css';
 
 export default function App({ Component, pageProps }: AppProps) {
+  const [queryClient] = useState(() => new QueryClient());
+
   const router = useRouter();
   const { locale, defaultLocale } = router;
-  const messages = locales[locale].default;
 
-  const apolloClient = useClient(pageProps.initialApolloState);
+  const intl = useCreateIntl({ locale, defaultLocale });
 
   useServiceWorker();
 
   return (
-    <ApolloProvider client={apolloClient}>
-      <IntlProvider locale={locale} defaultLocale={defaultLocale} messages={messages}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </IntlProvider>
-    </ApolloProvider>
+    <QueryClientProvider client={queryClient}>
+      <Hydrate state={pageProps.dehydratedState}>
+        <RawIntlProvider value={intl}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </RawIntlProvider>
+      </Hydrate>
+    </QueryClientProvider>
   );
 }

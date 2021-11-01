@@ -5,15 +5,15 @@ import Button from 'design-system/Button';
 import ReactSVG from 'components/Icons/React';
 import { withLink } from 'components/Link';
 
-import VIEWER_QUERY from 'apollo/queries/viewer';
-
-import useClientQuery from 'hooks/useClientQuery';
+import graphQLClient from 'utils/graphQLClient';
+import { useViewerQuery } from 'types/schema';
 
 const ButtonWithLink = withLink(Button);
 
 export default function CSR() {
   const { formatMessage } = useIntl();
-  const { data } = useClientQuery(VIEWER_QUERY);
+
+  const { data } = useViewerQuery(graphQLClient);
 
   return (
     <section className="flex flex-col justify-center items-center h-full space-y-10">

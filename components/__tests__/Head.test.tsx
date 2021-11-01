@@ -7,8 +7,8 @@ describe('Header', () => {
   test('Should had default values', () => {
     render(<Head />);
 
-    expect(document.title).toEqual(SEO.title);
-    expect((document.head.querySelector('meta[name=description]') as HTMLMetaElement).content).toEqual(SEO.description);
+    expect(document.title).toEqual(SEO().title);
+    expect((document.head.querySelector('meta[name=description]') as HTMLMetaElement).content).toEqual(SEO().description);
   });
 
   test('Should set a custom document title', () => {

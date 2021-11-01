@@ -71,20 +71,21 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 This project is build with :
 
 - [NextJs](https://nextjs.org/)
+- [React-Query](https://react-query.tanstack.com/)
 - [Apollo](https://www.apollographql.com/)
-- [prisma](https://www.prisma.io/)
+- [Prisma](https://www.prisma.io/)
 - [Tailwindcss](https://tailwindcss.com/)
 - [Typescript](https://www.typescriptlang.org/)
-- [react-intl](https://formatjs.io/)
+- [React-Intl](https://formatjs.io/)
 - [Jest](https://jestjs.io/)
-- [storybook](https://storybook.js.org/)
+- [Storybook](https://storybook.js.org/)
 - [Cypress](https://www.cypress.io/)
 - [Prettier](https://prettier.io/)
 - [Eslint](https://eslint.org/)
-- [husky](https://typicode.github.io/husky/#/)
-- [commitlint](https://commitlint.js.org/#/)
-- [standard-version](https://github.com/conventional-changelog/standard-version)
-- [vscode](https://code.visualstudio.com/)
+- [Husky](https://typicode.github.io/husky/#/)
+- [Commitlint](https://commitlint.js.org/#/)
+- [Standard-Version](https://github.com/conventional-changelog/standard-version)
+- [Vscode](https://code.visualstudio.com/)
 
 ## Tests
 
@@ -143,6 +144,10 @@ With the graphql endpoint running launch `yarn codegen`, this will create a typi
 ## Hosting
 
 Kirby use [vercel](https://vercel.com/docs) however you can use any other hosting service.
+
+In order to not populate `.env` and still being able to deploy we are using [vercel-env](https://vercel.com/docs/concepts/projects/environment-variables).
+
+You need to add both `NEXT_PUBLIC_GRAPHQL_ENDPOINT` and `DATABASE_URL` to have a sucessfull deployment on vercel.
 
 ## Roadmap:
 

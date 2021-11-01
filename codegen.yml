@@ -1,6 +1,13 @@
+overwrite: true
 schema:
-  - ${GRAPHQL_ENDPOINT}
+  - http://${HOSTNAME}:${PORT}${GRAPHQL_ENDPOINT}
+documents:
+  - './operations/**/*.ts'
 generates:
   ./types/schema.ts:
     plugins:
       - typescript
+      - typescript-operations
+      - typescript-react-query
+    config:
+      fetcher: graphql-request

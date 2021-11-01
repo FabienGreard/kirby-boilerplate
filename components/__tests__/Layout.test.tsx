@@ -1,6 +1,12 @@
 import { render } from 'utils/customTestRender';
 import Layout from 'components/Layout';
 
+jest.mock('next/router', () => ({
+  useRouter: () => ({
+    route: '/',
+  }),
+}));
+
 describe('Layout', () => {
   test('Should render a Layout element', () => {
     const { getByText, getByTestId } = render(

@@ -1,22 +1,37 @@
-import { ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
 import { render, RenderOptions } from '@testing-library/react';
-import { MockedProvider, MockedResponse } from '@apollo/client/testing';
-import { IntlProvider } from 'react-intl';
-import * as langs from 'langs';
+import { QueryClientProvider, QueryClient, setLogger } from 'react-query';
+import { RawIntlProvider } from 'react-intl';
 
-const customTestRender = (
-  ui: ReactElement,
-  options?: Omit<RenderOptions & { locale?: string; mocks: MockedResponse[] }, 'queries'>,
-) => {
-  const { locale = 'en', mocks = [] } = options || {};
+import { useCreateIntl } from './Intl';
+
+setLogger({
+  log: console.log,
+  warn: console.warn,
+  error: () => {},
+});
+
+const customTestRender = (ui: ReactElement, options?: Omit<RenderOptions & { locale?: string }, 'queries'>) => {
+  const { locale = 'en' } = options || {};
 
   const AllTheProviders = ({ children }: { children: ReactElement }) => {
+    const [queryClient] = useState(
+      () =>
+        new QueryClient({
+          defaultOptions: {
+            queries: {
+              retry: false,
+            },
+          },
+        }),
+    );
+
+    const intl = useCreateIntl({ locale, defaultLocale: 'en' });
+
     return (
-      <MockedProvider mocks={mocks}>
-        <IntlProvider locale={locale} messages={langs[locale].default} defaultLocale="en">
-          {children}
-        </IntlProvider>
-      </MockedProvider>
+      <QueryClientProvider client={queryClient}>
+        <RawIntlProvider value={intl}>{children}</RawIntlProvider>
+      </QueryClientProvider>
     );
   };
 

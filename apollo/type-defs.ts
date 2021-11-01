@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from 'apollo-server-micro';
 
 export default gql`
   type User {
