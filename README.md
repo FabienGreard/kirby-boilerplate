@@ -144,6 +144,8 @@ With the graphql endpoint running launch `yarn codegen`, this will create a typi
 
 Kirby use [vercel](https://vercel.com/docs) however you can use any other hosting service.
 
+In order to not populate `.env` and still being able to deploy we are using [vercel-env](https://vercel.com/docs/concepts/projects/environment-variables). 
+
 ## Roadmap:
 
 (Would love Pull requests that build towards these objectives)

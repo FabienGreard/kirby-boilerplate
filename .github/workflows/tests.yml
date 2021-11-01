@@ -109,6 +109,9 @@ jobs:
         if: steps.yarn-build-cache.outputs.cache-hit != 'true'
         run: yarn install
 
+      - name: Populate env
+        run: cp .env.example .env
+
       - name: Build
         run: yarn build
 
