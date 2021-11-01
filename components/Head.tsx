@@ -7,7 +7,7 @@ interface Props {
   description?: string;
 }
 
-export default function Head({ title = SEO.title, description = SEO.description }: Props) {
+export default function Head({ title = SEO().title, description = SEO().description }: Props) {
   return (
     <NextHead>
       <title>{title}</title>

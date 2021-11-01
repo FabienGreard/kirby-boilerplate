@@ -1,21 +1,21 @@
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
-import { IntlProvider } from 'react-intl';
+import { RawIntlProvider } from 'react-intl';
 import { ApolloProvider } from '@apollo/client';
 
 import Layout from 'components/Layout';
 
 import useServiceWorker from 'hooks/useServiceWorker';
 import useClient from 'apollo/client';
-
-import * as locales from 'langs';
+import { useIntl } from 'utils/Intl';
 
 import 'tailwindcss/tailwind.css';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const { locale, defaultLocale } = router;
-  const messages = locales[locale].default;
+
+  const intl = useIntl({ locale, defaultLocale });
 
   const apolloClient = useClient(pageProps.initialApolloState);
 
@@ -23,11 +23,11 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <ApolloProvider client={apolloClient}>
-      <IntlProvider locale={locale} defaultLocale={defaultLocale} messages={messages}>
+      <RawIntlProvider value={intl}>
         <Layout>
           <Component {...pageProps} />
         </Layout>
-      </IntlProvider>
+      </RawIntlProvider>
     </ApolloProvider>
   );
 }

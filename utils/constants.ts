@@ -1,8 +1,13 @@
 import packageJSON from 'package.json';
+import getIntl from 'utils/Intl';
 
-export const SEO = {
-  title: 'Kirby Boilerplate',
-  description: 'This is an opinionated boilerplate with rocking tools for front-end development.',
+export const SEO = () => {
+  const intl = getIntl();
+
+  return {
+    title: intl.formatMessage({ id: 'title' }),
+    description: intl.formatMessage({ id: 'description' }),
+  };
 };
 
 export const GITHUB_URL = packageJSON.homepage;
