@@ -1,6 +1,6 @@
 {
   "name": "kirby-boilerplate",
-  "version": "1.6.3",
+  "version": "1.6.5",
   "license": "MIT",
   "homepage": "https://github.com/FabienGreard/kirby-boilerplate#readme",
   "author": "Fabien Gréard <grd.fabien@gmail.com> (http://fabiengreard.com/)",
@@ -54,8 +54,7 @@
   },
   "dependencies": {
     "@next/bundle-analyzer": "^12.0.2",
-    "@prisma/client": "^3.3.0",
-    "apollo-server-micro": "^3.5.0",
+    "@prisma/client": "^3.4.1",
     "graphql": "^16.0.1",
     "graphql-request": "^3.6.1",
     "micro": "^9.3.4",
