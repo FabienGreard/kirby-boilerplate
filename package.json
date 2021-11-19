@@ -98,7 +98,7 @@
     "jest": "^27.3.1",
     "postcss": "^8.3.11",
     "prettier": "^2.4.1",
-    "prisma": "^3.3.0",
+    "prisma": "^3.4.2",
     "standard-version": "^9.3.2",
     "tailwindcss": "^2.2.19",
     "ts-node": "^10.4.0",
