@@ -1,6 +1,6 @@
 {
   "name": "kirby-boilerplate",
-  "version": "1.6.5",
+  "version": "1.6.6",
   "license": "MIT",
   "homepage": "https://github.com/FabienGreard/kirby-boilerplate#readme",
   "author": "Fabien Gréard <grd.fabien@gmail.com> (http://fabiengreard.com/)",
@@ -60,11 +60,11 @@
     "graphql-request": "^3.6.1",
     "micro": "^9.3.4",
     "micro-cors": "^0.1.1",
-    "next": "^12.0.2",
+    "next": "^12.0.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-intl": "^5.21.0",
-    "react-query": "^3.31.0"
+    "react-query": "^3.32.3"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
@@ -80,7 +80,7 @@
     "@storybook/addon-storyshots": "^6.3.12",
     "@storybook/react": "^6.3.12",
     "@testing-library/cypress": "^8.0.1",
-    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^12.1.2",
     "@testing-library/react-hooks": "^7.0.2",
     "@types/jest": "^27.0.2",
@@ -98,7 +98,7 @@
     "jest": "^27.3.1",
     "postcss": "^8.3.11",
     "prettier": "^2.4.1",
-    "prisma": "^3.3.0",
+    "prisma": "^3.4.2",
     "standard-version": "^9.3.2",
     "tailwindcss": "^2.2.19",
     "ts-node": "^10.4.0",
