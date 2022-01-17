@@ -1659,14 +1659,14 @@
     "@graphql-tools/utils" "^8.1.1"
     tslib "~2.3.0"
 
-"@graphql-codegen/plugin-helpers@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/plugin-helpers/-/plugin-helpers-2.3.0.tgz#e2d6538438e3eff1a68e59059dc9f5ab2eb52d43"
-  integrity sha512-IdIEtAFkAZrTgVbhMzYudIzcsFHkP2pUpZjg3X+x1XJfZ+asEVHf1SCwL9gOIM/BuG+fsHRZMenedfWHSyF/AQ==
+"@graphql-codegen/plugin-helpers@^2.3.0", "@graphql-codegen/plugin-helpers@^2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/plugin-helpers/-/plugin-helpers-2.3.2.tgz#3f9ba625791901d19be733db1dfc9a3dbd0dac44"
+  integrity sha512-19qFA5XMAWaAY64sBljjDPYfHjE+QMk/+oalCyY13WjSlcLDvYPfmFlCNgFSsydArDELlHR8T1GMbA7C42M8TA==
   dependencies:
-    "@graphql-tools/utils" "^8.1.1"
+    "@graphql-tools/utils" "^8.5.2"
     change-case-all "1.0.14"
-    common-tags "1.8.0"
+    common-tags "1.8.2"
     import-from "4.0.0"
     lodash "~4.17.0"
     tslib "~2.3.0"
@@ -1682,13 +1682,13 @@
     auto-bind "~4.0.0"
     tslib "~2.3.0"
 
-"@graphql-codegen/typescript-react-query@^3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-react-query/-/typescript-react-query-3.1.1.tgz#80d07e749a2d5cd0e84db2d9d060fde240253ffe"
-  integrity sha512-ETEnHEPm4bRBOkXA3PRsRqjanUgGuEOqoEgDsA+8iZj6RVjupge2XE6zqJfJS8fdskSGpfWw5vX//pAu/CQ0gw==
+"@graphql-codegen/typescript-react-query@^3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-react-query/-/typescript-react-query-3.3.1.tgz#9a8b695b22cfe44cb41cd7498d43efd1a8b5ac7a"
+  integrity sha512-FPI/wGudxAukqFSb4Gx/kHvouFjzBem3lj4F6p5z7WR6Kj++VFUC/D12zGaJHpVZUNd4bW19NPGC+L3ksFaENg==
   dependencies:
-    "@graphql-codegen/plugin-helpers" "^2.3.0"
-    "@graphql-codegen/visitor-plugin-common" "2.5.0"
+    "@graphql-codegen/plugin-helpers" "^2.3.2"
+    "@graphql-codegen/visitor-plugin-common" "2.5.2"
     auto-bind "~4.0.0"
     change-case-all "1.0.14"
     tslib "~2.3.0"
@@ -1709,6 +1709,22 @@
   integrity sha512-a1kJ/5YBivCj9X20YuhNU2mPY9xjUVmJO0VjHBu06PyvC27GsR1PmvgRALIXrb6QwV+9DDUda3ewKzgne2Qc+A==
   dependencies:
     "@graphql-codegen/plugin-helpers" "^2.3.0"
+    "@graphql-tools/optimize" "^1.0.1"
+    "@graphql-tools/relay-operation-optimizer" "^6.3.7"
+    "@graphql-tools/utils" "^8.3.0"
+    auto-bind "~4.0.0"
+    change-case-all "1.0.14"
+    dependency-graph "^0.11.0"
+    graphql-tag "^2.11.0"
+    parse-filepath "^1.0.2"
+    tslib "~2.3.0"
+
+"@graphql-codegen/visitor-plugin-common@2.5.2":
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-2.5.2.tgz#90aa4add41e17bca83f1c7c8ad674f2a06065efd"
+  integrity sha512-qDMraPmumG+vEGAz42/asRkdgIRmQWH5HTc320UX+I6CY6eE/Ey85cgzoqeQGLV8gu4sj3UkNx/3/r79eX4u+Q==
+  dependencies:
+    "@graphql-codegen/plugin-helpers" "^2.3.2"
     "@graphql-tools/optimize" "^1.0.1"
     "@graphql-tools/relay-operation-optimizer" "^6.3.7"
     "@graphql-tools/utils" "^8.3.0"
@@ -1936,6 +1952,13 @@
   version "8.5.1"
   resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-8.5.1.tgz#95f3a9bdcaa8de312130c46b6da829a3fcbac3f6"
   integrity sha512-V/OQVpj+Z05qW9ZdlJWSKzREYlgGEq+juV+pUy3JO9jI+sZo/W3oncuW9+1awwp/RkL0aZ9RgjL+XYOgCsmOLw==
+  dependencies:
+    tslib "~2.3.0"
+
+"@graphql-tools/utils@^8.5.2":
+  version "8.6.1"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-8.6.1.tgz#52c7eb108f2ca2fd01bdba8eef85077ead1bf882"
+  integrity sha512-uxcfHCocp4ENoIiovPxUWZEHOnbXqj3ekWc0rm7fUhW93a1xheARNHcNKhwMTR+UKXVJbTFQdGI1Rl5XdyvDBg==
   dependencies:
     tslib "~2.3.0"
 
@@ -5923,7 +5946,12 @@ commander@^6.0.0, commander@^6.2.0, commander@^6.2.1:
   resolved "https://registry.yarnpkg.com/commander/-/commander-6.2.1.tgz#0792eb682dfbc325999bb2b84fddddba110ac73c"
   integrity sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA==
 
-common-tags@1.8.0, common-tags@^1.8.0:
+common-tags@1.8.2:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/common-tags/-/common-tags-1.8.2.tgz#94ebb3c076d26032745fd54face7f688ef5ac9c6"
+  integrity sha512-gk/Z852D2Wtb//0I+kRFNKKE9dIIVirjoqPoA1wJU+XePVXZfGeBpk45+A1rKO4Q43prqWBNY/MiIeRLbPWUaA==
+
+common-tags@^1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/common-tags/-/common-tags-1.8.0.tgz#8e3153e542d4a39e9b10554434afaaf98956a937"
   integrity sha512-6P6g0uetGpW/sdyUy/iQQCbFF0kWVMSIVSyYz7Zgjcgh8mgw8PQzDNZeyZ5DQ2gM7LBoZPHmnjz8rUthkBG5tw==
